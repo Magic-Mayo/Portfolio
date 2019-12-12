@@ -1,16 +1,10 @@
 import React from 'react';
-import {Route} from 'react-router-dom';
-import Portfolio from './components/Portfolio';
-import Contact from './components/Contact';
-import './App.scss'
+import Portfolio from './page/Portfolio';
 
 export default function App() {
     return (
         <>
             <Portfolio />
-            <Route path="/contact">
-                <Contact />
-            </Route>
         </>
     );
 }

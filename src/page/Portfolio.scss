@@ -1,0 +1,23 @@
+.app {
+
+    color: #20E9FF;
+    display: grid;
+    grid-template-columns: repeat(10, 1fr);
+
+    &-header {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        text-align: center;
+        width: 100%;
+        grid-column: 1/11;
+    }
+    
+    &-myName {
+        font-size: 6.5rem;
+    }
+
+    &-descriptor {
+        font-size: 3.5rem;
+    }
+}
