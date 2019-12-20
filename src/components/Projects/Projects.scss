@@ -1,0 +1,28 @@
+.project {
+    display: inline-block;
+    grid-column: 2/10;
+    font-size: 1.5rem;
+    border: currentColor 4px solid;
+    border-radius: 10px;
+    margin-bottom: 30px;
+    text-align: center;
+    padding: 0 4px;
+    
+    &:hover {
+        box-shadow: #dddddd 0 0 8px 5px;
+        border: none;
+    }
+    &-title {
+        text-decoration: underline;
+        font-style: italic;
+        text-align: center;
+        cursor: pointer;
+        display: inline-block;
+    }
+}
+
+.img {
+    width: 40%;
+    height: auto;
+    cursor: pointer;
+}
