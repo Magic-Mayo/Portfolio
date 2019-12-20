@@ -1,4 +1,5 @@
 @import './page/Portfolio.scss';
+@import './components/Logos/Logos.scss';
 
 @import './components/About/About.scss';
 @import './components/Projects/Projects.scss';
@@ -14,6 +15,7 @@ body {
   color: #dddddd;
   font-size: 10px;
   height: 100vh;
+  box-sizing: border-box;
 }
 
 code {
