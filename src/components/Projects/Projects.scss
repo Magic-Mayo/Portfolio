@@ -6,23 +6,48 @@
     border-radius: 10px;
     margin-bottom: 30px;
     text-align: center;
-    padding: 0 4px;
+    padding: 0 2.5rem;
     
     &:hover {
-        box-shadow: #dddddd 0 0 8px 5px;
+        box-shadow: #dddddd 0 0 .8rem .5rem;
         border: none;
+        padding-bottom: .35rem;
     }
+    
     &-title {
         text-decoration: underline;
         font-style: italic;
         text-align: center;
         cursor: pointer;
         display: inline-block;
+        margin: 2rem 0 1.5rem;
     }
-}
 
-.img {
-    width: 40%;
-    height: auto;
-    cursor: pointer;
+    p {
+        margin: 0 0 1.5rem;
+    }
+
+    span {
+        position: absolute;
+        top: 50%;
+        left: 40%;
+        font-size: 75%;
+    }
+    
+    .img {
+        width: 40%;
+        height: auto;
+        cursor: pointer;
+        margin-bottom: 1rem;
+
+        &-container {
+            position: relative;
+            display: block;
+        }
+    }
+    
+    .img:hover {
+        background-color: black;
+        opacity: .3;
+    }
 }
