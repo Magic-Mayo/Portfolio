@@ -4,7 +4,7 @@
         "github": "Under-the-Weather",
         "address": "http://under-the-weather.herokuapp.com",
         "img": "/images/weather.png",
-        "description": "MERN stack app that is used to track illness/injury symptoms.  This app allows users to sign up for an account and store their symptoms so they can use this information when they visit a primary care physician.  A lot of us seem to magically forget what's been going on while \"Under the Weather\" and this app is used to help that"
+        "description": "MERN stack app that is used to track illness/injury symptoms.  This app allows users to sign up for an account and store their symptoms so they can use this information when they visit a primary care physician.  A lot of us seem to magically forget what's been going on while \"Under the Weather\" and this app is used to help with that."
     },
     {
         "name": "Phrasing!",
