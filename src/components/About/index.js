@@ -6,7 +6,7 @@ export default function About(){
             <h2 className='intro-title'>About</h2>
             <p>
                 I'll start with a little history on myself and how I came to this point. I began my adult life
-                serving five years in the US Air Force as an Avionics System Technian on F-16 aircraft. I enjoyed
+                serving five years in the US Air Force as an Avionics System Technician on F-16 aircraft. I enjoyed
                 the time I spent in the Air Force but never intended it to be a full career. After separating from
                 the Air Force I went to school at Unviersal Technical Institute and earned an Associate's degree in
                 Automotive Technology. From there I went on to earn seven ASE certifications as well as become an
