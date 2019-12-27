@@ -1,24 +1,45 @@
-import React, {useState, useEffect} from 'react';
-import Github from '../Logos/Github';
+import React, {useState} from 'react';
+import Logo from '../Logos';
 
 export default function Projects(props){
 
-    const [opacity, setOpacity] = useState(.3);
     const [hoverText, setHoverText] = useState(false);
-
-    useEffect(()=>{
-        setHoverText(hoverText)
-    },[hoverText])
+    const [opacity, setOpacity] = useState(1);
+    const [gifSrc, setgifSrc] = useState(false);
 
     return (
-        <div className={`project project-${props.github}`} onMouseEnter={()=>setOpacity(1)} onMouseLeave={()=>setOpacity(.3)} style={{opacity: `${opacity}`}}>
-            <h1 className={`project-title project-title-${props.name}`} onClick={()=>window.open(`${props.address}`, '_blank','')}>{props.name}</h1>
-            <Github address={props.github} />
+        <div
+        className={`project project-${props.github}`}
+        onMouseEnter={()=>setgifSrc(true)}
+        onMouseLeave={()=>setgifSrc(false)}>
+            
+            <h1 className={`project-title project-title-${props.name}`}>
+                {props.name}
+            </h1>
+
+            <Logo
+            address={props.github}
+            site='github'/>
+            
             <p>{props.desc}</p>
-            <div className='img-container' onClick={()=>window.open(`${props.address}`, '_blank','')} onMouseEnter={()=>setHoverText(true)} onMouseLeave={()=>setHoverText(false)}>
-                <img src={process.env.PUBLIC_URL + props.img} style={{}} alt={"name"}  className={`img img-${props.github}`}></img>
-                {hoverText && <span>Click to visit site</span>}
-            </div>
+
+            <span
+            className='img-container'
+            onClick={()=>window.open(`${props.address}`, '_blank','')}
+            onMouseEnter={()=>setHoverText(true)}
+            onMouseLeave={()=>setHoverText(false)}>
+
+                <img
+                src={require(`../../assets/${gifSrc ? props.gif : props.img}`)}
+                onMouseLeave={()=>setOpacity(1)}
+                onMouseEnter={()=>setOpacity(.3)}
+                style={{opacity: opacity}}
+                alt={props.name}
+                className={`img img-${props.github}`}>
+                </img>
+
+                {hoverText && <span className='img-span'>Click to visit site</span>}
+            </span>
         </div>
     )
 }
