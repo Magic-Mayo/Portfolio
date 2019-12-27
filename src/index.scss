@@ -13,9 +13,13 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   color: #dddddd;
-  font-size: 10px;
   height: 100vh;
   box-sizing: border-box;
+  font-family: 'Quicksand', sans-serif;
+}
+
+html {
+    font-size: 10px;
 }
 
 code {
