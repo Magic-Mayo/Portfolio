@@ -3,20 +3,45 @@
     color: #20E9FF;
     display: grid;
     grid-template-columns: repeat(10, 1fr);
+    grid-template-rows: 130vh;
 
     &-header {
-        display: flex;
-        flex-direction: column;
         text-align: center;
-        width: 100%;
         grid-column: 1/11;
+        margin-top: 30vh;
+        height: 70vh;
     }
     
     &-myName {
-        font-size: 6.5rem;
+        display: block;
+        font-size: 10rem;
+        width: 100%;
+        
+        &.inview {
+            position: relative;
+            animation: title 1s 1 ease-in;
+        }
+    }
+    
+    &-descriptor {
+        display: block;
+        width: 100%;
+        font-size: 5rem;
+        visibility: hidden;
+        
+        &.inview {
+            position: relative;
+            left: -100vw;
+            animation: subtitle 1s 1s 1 ease-out;
+        }
     }
 
-    &-descriptor {
-        font-size: 3.5rem;
-    }
+}
+
+@keyframes title {
+    0% {margin-top: -50vh}
+}
+
+@keyframes subtitle {
+    100% {left: 0; visibility: visible;}
 }
