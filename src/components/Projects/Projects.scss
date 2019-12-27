@@ -1,53 +1,64 @@
 .project {
     display: inline-block;
-    grid-column: 2/10;
-    font-size: 1.5rem;
+    font-size: 2rem;
     border: currentColor 4px solid;
     border-radius: 10px;
     margin-bottom: 30px;
-    text-align: center;
-    padding: 0 2.5rem;
+    padding: 0 2.5rem 2rem;
+    position: relative;
+    opacity: .3;
+    
+    &-container {
+        grid-column: 3/9;
+        text-align: center;
+    }
     
     &:hover {
         box-shadow: #dddddd 0 0 .8rem .5rem;
         border: none;
-        padding-bottom: .35rem;
+        opacity: 1;
+        padding: 0 3.5rem 2rem;
+        transform: scale(1.32, 1.05);
     }
-    
+
     &-title {
         text-decoration: underline;
         font-style: italic;
         text-align: center;
-        cursor: pointer;
         display: inline-block;
         margin: 2rem 0 1.5rem;
+        max-width: 60%;
+        vertical-align: bottom;
     }
 
     p {
         margin: 0 0 1.5rem;
     }
 
-    span {
-        position: absolute;
-        top: 50%;
-        left: 40%;
-        font-size: 75%;
-    }
     
     .img {
-        width: 40%;
-        height: auto;
+        width: 360px;
+        height: 240px;
         cursor: pointer;
-        margin-bottom: 1rem;
-
+        
         &-container {
             position: relative;
-            display: block;
+            display: inline-block;
+            
+            &:hover {
+                cursor: pointer;
+            }
         }
-    }
-    
-    .img:hover {
-        background-color: black;
-        opacity: .3;
+        
+        &-span {
+            color: #ffffff;
+            font-style: italic;
+            font-weight: bold;
+            font-size: 2.5rem;
+            position: absolute;
+            bottom: 50%;
+            left: 50%;
+            transform: translate(-50%, 50%);
+        }
     }
 }
