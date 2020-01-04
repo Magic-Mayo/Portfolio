@@ -26,13 +26,11 @@ export default function Projects(props){
             <span
             className='img-container'
             onClick={()=>window.open(`${props.address}`, '_blank','')}
-            onMouseEnter={()=>setHoverText(true)}
-            onMouseLeave={()=>setHoverText(false)}>
+            onMouseEnter={()=>{setHoverText(true);setOpacity(.3)}}
+            onMouseLeave={()=>{setHoverText(false);setOpacity(1)}}>
 
                 <img
                 src={require(`../../assets/${gifSrc ? props.gif : props.img}`)}
-                onMouseLeave={()=>setOpacity(1)}
-                onMouseEnter={()=>setOpacity(.3)}
                 style={{opacity: opacity}}
                 alt={props.name}
                 className={`img img-${props.github}`}>
