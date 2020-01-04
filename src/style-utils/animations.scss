@@ -1,0 +1,12 @@
+@keyframes title {
+    0% {margin-top: -50vh}
+}
+
+@keyframes subtitle {
+    from {
+        left: -100vw;
+    }
+    to {
+        left: 0;
+    }
+}
