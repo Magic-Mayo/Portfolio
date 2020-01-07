@@ -1,18 +1,66 @@
 .project {
-    display: inline-block;
     font-size: 2rem;
-    border: 4px solid;
-    border-radius: 10px;
-    margin-bottom: 30px;
+    margin: 3rem;
     padding: 0 2.5rem 2rem;
     position: relative;
     opacity: .3;
-    width: 60%;
+    width: 40%;
+    height: 60vh;
     
-    &-container {
+    &-wrapper {
         grid-column: 1/11;
         text-align: center;
         position: relative;
+        display: flex;
+        flex-direction: column;
+    }
+    
+    &-container {
+        width: 100%;
+        display: inline-flex;
+        justify-content: center;
+
+        &:first-of-type {
+            .project:last-of-type {
+                border-right: .4rem solid;
+                border-top: .4rem solid;
+
+                &:hover {
+                    border: none;
+                }
+            }
+
+            .project:first-of-type {
+                border-left: .4rem solid;
+                border-top: .4rem solid;
+                
+                &:hover {
+                    border: none;
+                }
+            }
+            
+            
+        }
+        
+        &:last-of-type {
+            .project:last-of-type {
+                border-right: .4rem solid;
+                border-bottom: .4rem solid;
+                
+                &:hover {
+                    border: none;
+                }
+            }
+            
+            .project:first-of-type {
+                border-left: .4rem solid;
+                border-bottom: .4rem solid;
+                
+                &:hover {
+                    border: none;
+                }
+            }
+        }
     }
     
     &-header {
@@ -22,7 +70,7 @@
         &::after{
             content: '';
             position: absolute;
-            border-bottom: solid $teal 1px;
+            border-bottom: solid $teal .1rem;
             top: 7.5rem;
             width: 30%;
             left: 50%;
@@ -35,7 +83,7 @@
         border: none;
         opacity: 1;
         padding: 0 3.5rem 2rem;
-        transform: scale(1.32, 1.05);
+        transform: scale(1.05, 1.15);
     }
 
     &-title {
