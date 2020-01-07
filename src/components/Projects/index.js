@@ -36,7 +36,11 @@ export default function Projects(props){
                 className={`img img-${props.github}`}>
                 </img>
 
-                {hoverText && <span className='img-span'>Click to visit site</span>}
+                {hoverText && 
+                    <span
+                    className='img-span'>Visit site
+                        <img src={require('../../assets/newtab.png')} alt='Open site in new tab'/>
+                    </span>}
             </span>
         </div>
     )
