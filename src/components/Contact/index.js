@@ -68,7 +68,7 @@ export default function Contact(){
 
             <p className='contact-other'>...or reach me here</p>
             <Logo site='linkedin' />
-            <Logo site='github' address='github.com/Magic-Mayo' margin={false}/>
+            <Logo site='github' margin={false}/>
         </section>
     )
 }
