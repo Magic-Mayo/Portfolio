@@ -9,7 +9,7 @@ export default function Portfolio(){
         <>
             <About />
             <div className='project-container'>
-                <h1>Projects</h1>
+                <h1 className='project-header'>Projects</h1>
                 {projectData.map(project=>{
                     return <Projects
                     key={project.name}
