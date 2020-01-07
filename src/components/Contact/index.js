@@ -1,14 +1,38 @@
 import React, { useState } from 'react';
 
+
+
 export default function Contact(){
     const [contactName, setContactName] = useState('');
     const [contactEmail, setContactEmail] = useState('');
     const [contactMessage, setContactMessage] = useState('');
+    
+    const encode = (data) => {
+        return Object.keys(data)
+            .map(key => encodeURIComponent(key) + "=" + encodeURIComponent(data[key]))
+            .join("&");
+    }
+    
+    const handleSubmit = e => {
+        fetch("/", {
+          method: "POST",
+          headers: { "Content-Type": "application/x-www-form-urlencoded" },
+          body: encode({ "form-name": "contact", "name": [contactName], "email": [contactEmail], "message": [contactMessage]})
+        })
+          .then(() => alert("Success!"))
+          .catch(error => alert(error));
+    
+        e.preventDefault();
+    };
 
     return(
         <div className='contact-form-wrapper'>
         <span className='contact-form-header'>Contact Mike Mayo</span>
-            <form className='contact-form' netlify>
+            <form
+            className='contact-form'
+            netlify='true'
+            name='messages'
+            onSubmit={()=>handleSubmit(contactName, contactEmail, contactMessage)}>
                 <input
                 className='contact-form-name'
                 placeholder='Preferred contact name'
