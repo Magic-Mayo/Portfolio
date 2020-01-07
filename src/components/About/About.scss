@@ -1,9 +1,10 @@
 .intro {
     grid-column: 2/10;
     font-size: 2.5rem;
-    border: currentColor double 4px;
+    border: $teal double 4px;
     padding: 2rem;
     margin-bottom: 3rem;
+    color: $darkOrange;
 
     &-title {
         text-align: center;
