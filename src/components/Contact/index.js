@@ -16,17 +16,21 @@ export default function Contact(){
     const handleSubmit = e => {
         e.preventDefault();
 
-        fetch("/", {
-          method: "POST",
-          headers: { "Content-Type": "application/x-www-form-urlencoded" },
-          body: encode({ "form-name": "messages", "name": [contactName], "email": [contactEmail], "message": [contactMessage]})
-        })
-          .then(() => alert("Your message is on the way!"))
-          .catch(error => alert(error));
-        
-        setContactMessage('');
-        setContactName('');
-        setContactEmail('');    
+        if(contactName !== '' && contactEmail !== '' && contactMessage !== ''){
+            fetch("/", {
+            method: "POST",
+            headers: { "Content-Type": "application/x-www-form-urlencoded" },
+            body: encode({ "form-name": "messages", "name": [contactName], "email": [contactEmail], "message": [contactMessage]})
+            })
+            .then(() => alert("Your message is on the way!"))
+            .catch(error => alert(error));
+            
+            setContactMessage('');
+            setContactName('');
+            setContactEmail('');
+        } else {
+            alert('Please fill out all fields!')
+        }
     };
 
     return(
