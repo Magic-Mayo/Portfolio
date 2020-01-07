@@ -12,14 +12,14 @@ export default function Contact(){
             .map(key => encodeURIComponent(key) + "=" + encodeURIComponent(data[key]))
             .join("&");
     }
-    
+
     const handleSubmit = e => {
         fetch("/", {
           method: "POST",
           headers: { "Content-Type": "application/x-www-form-urlencoded" },
-          body: encode({ "form-name": "contact", "name": [contactName], "email": [contactEmail], "message": [contactMessage]})
+          body: encode({ "form-name": "messages", "name": [contactName], "email": [contactEmail], "message": [contactMessage]})
         })
-          .then(() => alert("Success!"))
+          .then(() => alert("Your message is on the way!"))
           .catch(error => alert(error));
     
         e.preventDefault();
