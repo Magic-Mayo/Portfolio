@@ -23,7 +23,8 @@ export default function Github(props){
             window.open(props.site === 'github' ? `https://www.github.com/Magic-Mayo/${props.address}`
             : 'https://www.linkedin.com/in/michael-mayo-54957a121/', '_blank','')}
         onMouseEnter={()=>setHover(true)}
-        onMouseLeave={()=>setHover(false)}>
+        onMouseLeave={()=>setHover(false)}
+        style={!props.style && {margin: '0 2rem'}}>
             {/* Credit to Nikolay Bolonin for the SVG icons https://codepen.io/hackzilla/pen/qaawdZ */}
             
             {props.site === 'github' ?
