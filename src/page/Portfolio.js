@@ -8,7 +8,7 @@ export default function Portfolio(){
     return (
         <>
             <About />
-            <div className='project-container'>
+            <section className='project-container'>
                 <h1 className='project-header'>Projects</h1>
                 {projectData.map(project=>{
                     return <Projects
@@ -21,7 +21,7 @@ export default function Portfolio(){
                     desc={project.description}
                     />
                 })}
-            </div>
+            </section>
             <Contact />
         </>
     )
