@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-
+import Logo from '../Logos'
 
 
 export default function Contact(){
@@ -65,6 +65,10 @@ export default function Contact(){
                 </span>
                 <button className='contact-form-submit'>Send!</button>
             </form>
+
+            <p className='contact-other'>...or reach me here</p>
+            <Logo site='linkedin' />
+            <Logo site='github' address='github.com/Magic-Mayo' margin={false}/>
         </section>
     )
 }
