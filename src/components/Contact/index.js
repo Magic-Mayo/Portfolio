@@ -37,12 +37,14 @@ export default function Contact(){
                 className='contact-form-name'
                 placeholder='Preferred contact name'
                 onChange={(e)=>setContactName(e.target.value)}
-                value={contactName}/>
+                value={contactName}
+                type='text'/>
                 <input
                 className='contact-form-email'
                 placeholder='Email address'
                 onChange={(e)=>setContactEmail(e.target.value)}
-                value={contactEmail}/>
+                value={contactEmail}
+                type='email'/>
                 <textarea
                 className='contact-form-message'
                 placeholder='Enter message to send to Mike Mayo here!'
