@@ -1,10 +1,20 @@
 .contact {
     &-form {
+        margin-top: 2rem;
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        align-items: center;
+
+        span {
+            width: 50%;
+        }
         &-wrapper {
             grid-column: 1/11;
             text-align: center;
-            margin: 3rem 0;
+            margin: 10rem 0 5rem;
             font-size: 3rem;
+            position: relative;
 
         
             input, textarea {
@@ -13,7 +23,7 @@
                 // box-shadow: rgba(32,233,255,.5) 1rem 1rem 2rem;
                 resize: none;
                 border-radius: .5rem;
-                width: 25%;
+                width: 48%;
                 height: 3.5rem;
                 margin: .5rem;
                 padding: .2rem .5rem;
@@ -27,8 +37,34 @@
         }
 
         &-header {
-
+            
+            &::after{
+                content: '';
+                position: absolute;
+                border-bottom: solid $teal 1px;
+                top: 3.75rem;
+                width: 40%;
+                left: 50%;
+                transform: translateX(-50%);
+            }
         }
 
+        &-submit {
+            background-color: $darkOrange;
+            border-radius: .5rem;
+            border: none;
+            padding: .5rem .3rem;
+            color: #dddddd;
+            font-size: 2rem;
+            margin-top: 3rem;
+            width: 15%;
+            box-shadow: #555555 .5rem .5rem 2rem;
+            
+            &:hover {
+                box-shadow: #555555 -.5rem -.5rem 2rem;
+                cursor: pointer;
+                background-color: $lightOrange;
+            }
+        }
     }
 }
