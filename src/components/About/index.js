@@ -3,7 +3,7 @@ import React from 'react';
 export default function About(){
     return (
         <div className='intro'>
-            <h2 className='intro-title'>About</h2>
+            <h2 className='intro-title'>About Mike</h2>
             <p>
                 I'll start with a little history on myself and how I came to this point. I began my adult life
                 serving five years in the US Air Force as an Avionics System Technician on F-16 aircraft. I enjoyed
