@@ -20,7 +20,7 @@ export default function Github(props){
         <div
         className={`logo-${props.site}`}
         onClick={()=>
-            window.open(props.site === 'github' ? `https://www.github.com/Magic-Mayo/${props.address}`
+            window.open(props.site === 'github' ? `https://www.github.com/Magic-Mayo/${props.address ? props.address : ''}`
             : 'https://www.linkedin.com/in/michael-mayo-54957a121/', '_blank','')}
         onMouseEnter={()=>setHover(true)}
         onMouseLeave={()=>setHover(false)}
