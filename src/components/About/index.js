@@ -2,7 +2,7 @@ import React from 'react';
 
 export default function About(){
     return (
-        <div className='intro'>
+        <section className='intro'>
             <h2 className='intro-title'>About Mike</h2>
             <p>
                 I'll start with a little history on myself and how I came to this point. I began my adult life
@@ -25,6 +25,6 @@ export default function About(){
                 California section of the Pacific Crest Trail. If you've never heard of the Pacific Crest Trail, it runs from the California/Mexico border and winds through California, Oregon, and Washington and finishes eight miles
                 into Canada.  The full trail is over 2,600 miles long! I intended on completing the full length of the trail but was forced to come home due to injuries I could no longer hike on. I hiked through numerous injuries on the trail but ultimately I decided long-term health was more important than finishing something I could always come back to. Hiking 700 miles is still a feat in itself and I plan to go back someday and finish what I started!
             </p>
-        </div>
+        </section>
     )
 }

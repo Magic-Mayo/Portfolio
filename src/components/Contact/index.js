@@ -34,7 +34,7 @@ export default function Contact(){
     };
 
     return(
-        <div className='contact-form-wrapper'>
+        <section className='contact-form-wrapper'>
             <span className='contact-form-header'>Contact Mike Mayo</span>
             <form
             className='contact-form'
@@ -44,7 +44,7 @@ export default function Contact(){
                 <span>
                     <input
                     className='contact-form-name'
-                    placeholder='Preferred contact name'
+                    placeholder='Your name'
                     onChange={(e)=>setContactName(e.target.value)}
                     value={contactName}
                     type='text'/>
@@ -55,14 +55,16 @@ export default function Contact(){
                     value={contactEmail}
                     type='email'/>
                 </span>
-                <textarea
-                className='contact-form-message'
-                placeholder='Enter message to send to Mike Mayo here!'
-                onChange={(e)=>setContactMessage(e.target.value)}
-                value={contactMessage}>
-                </textarea>
+                <span>
+                    <textarea
+                    className='contact-form-message'
+                    placeholder='Enter message to send to Mike Mayo here!'
+                    onChange={(e)=>setContactMessage(e.target.value)}
+                    value={contactMessage}>
+                    </textarea>
+                </span>
                 <button className='contact-form-submit'>Send!</button>
             </form>
-        </div>
+        </section>
     )
 }
