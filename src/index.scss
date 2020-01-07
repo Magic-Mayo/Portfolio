@@ -1,3 +1,5 @@
+@import './style-utils/utils.scss';
+@import './style-utils/animations.scss';
 @import './page/Portfolio.scss';
 @import './components/Logos/Logos.scss';
 
@@ -16,10 +18,16 @@ body {
   height: 100vh;
   box-sizing: border-box;
   font-family: 'Quicksand', sans-serif;
+  overflow-x: hidden;
 }
 
 html {
     font-size: 10px;
+}
+
+* {
+    margin: 0;
+    padding: 0;
 }
 
 code {
