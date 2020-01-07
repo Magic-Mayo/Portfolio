@@ -14,6 +14,9 @@ export default function Contact(){
     }
 
     const handleSubmit = e => {
+        e.preventDefault();
+        console.log(contactMessage, contactName, contactEmail);
+
         fetch("/", {
           method: "POST",
           headers: { "Content-Type": "application/x-www-form-urlencoded" },
@@ -22,7 +25,6 @@ export default function Contact(){
           .then(() => alert("Your message is on the way!"))
           .catch(error => alert(error));
     
-        e.preventDefault();
     };
 
     return(
@@ -32,7 +34,7 @@ export default function Contact(){
             className='contact-form'
             netlify='true'
             name='messages'
-            onSubmit={()=>handleSubmit(contactName, contactEmail, contactMessage)}>
+            onSubmit={handleSubmit}>
                 <input
                 className='contact-form-name'
                 placeholder='Preferred contact name'
