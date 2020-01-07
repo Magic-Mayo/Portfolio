@@ -15,7 +15,6 @@ export default function Contact(){
 
     const handleSubmit = e => {
         e.preventDefault();
-        console.log(contactMessage, contactName, contactEmail);
 
         fetch("/", {
           method: "POST",
@@ -24,7 +23,10 @@ export default function Contact(){
         })
           .then(() => alert("Your message is on the way!"))
           .catch(error => alert(error));
-    
+        
+        setContactMessage('');
+        setContactName('');
+        setContactEmail('');    
     };
 
     return(
@@ -53,13 +55,7 @@ export default function Contact(){
                 onChange={(e)=>setContactMessage(e.target.value)}
                 value={contactMessage}>
                 </textarea>
-                <button
-                className='contact-form-submit'
-                onClick={(e)=>{
-                    e.preventDefault();
-                    setContactMessage('');
-                    setContactName('');
-                    setContactEmail('');}}>Submit</button>
+                <button className='contact-form-submit'>Submit</button>
             </form>
         </div>
     )
