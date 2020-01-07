@@ -5,7 +5,6 @@
     position: relative;
     opacity: .3;
     width: 40%;
-    height: 60vh;
     
     &-wrapper {
         grid-column: 1/11;
@@ -107,7 +106,6 @@
         
         &-container {
             position: relative;
-            display: inline-block;
             max-width:90%;
             margin-top: 3rem;
             
@@ -122,9 +120,15 @@
             font-weight: bold;
             font-size: 2.5rem;
             position: absolute;
-            bottom: 50%;
+            bottom: 5rem;
             left: 50%;
-            transform: translate(-50%, 50%);
+            transform: translateX(-50%);
+
+            img {
+                width: 2.5rem;
+                color: #ffffff;
+                margin-left: 1rem;
+            }
         }
     }
 }
