@@ -1,6 +1,6 @@
 .app {
 
-    color: #20E9FF;
+    color: $teal;
     display: grid;
     grid-template-columns: repeat(10, 1fr);
     grid-template-rows: 130vh;
@@ -8,49 +8,73 @@
     &-header {
         text-align: center;
         grid-column: 1/11;
-        margin-top: 30vh;
-        height: 70vh;
+        padding-top: 30vh;
+        height: 100vh;
         display: flex;
         flex-direction: column;
     }
     
     &-myName {
-        display: block;
         font-size: 10rem;
         width: 100%;
         
         &.inview {
             position: relative;
-            animation: title 1s 1 ease-in;
+            animation: title .65s ease-in;
         }
     }
     
     &-descriptor {
-        display: inline-block;
-        // width: 100%;
         font-size: 5rem;
-        // visibility: hidden;
 
         &-thinker {
 
             &.inview {
-                animation: subtitle 1s 1s 1 ease-in;
-            }
-
-            &.outview {
                 position: relative;
+            }
+            
+            &.outview {
+                animation: thinker 1s ease-in;
+                position: absolute;
                 left: -100vw;
-                visibility: hidden;
+            }
+        }
+        &-creator {
+
+            &.inview {
+                position: relative;
+            }
+            
+            &.outview {
+                animation: creator 1s .45s ease-in;
+                position: relative;
+                bottom: -120vh;
+            }
+        }
+        &-developer {
+            
+            &.inview {
+                position: relative;
+            }
+            
+            &.outview {
+                animation: developer 1s .9s ease-in;
+                position: relative;
+                right: -100vw;
+            }
+        }
+        &-separator {
+            
+            &.inview {
+                position: relative;
+            }
+            
+            &.outview {
+                animation: separator 1s 1.35s ease-in;
+                position: relative;
+                bottom: -120vh;
             }
         }
     }
-
-}
-
-@keyframes title {
-    0% {margin-top: -50vh}
-}
-
-@keyframes subtitle {
-    100% {bottom: 0; visibility: visible;}
+    
 }
