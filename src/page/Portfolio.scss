@@ -5,6 +5,22 @@
     grid-template-columns: repeat(10, 1fr);
     grid-template-rows: 130vh;
 
+    &-nav {
+        width: 100%;
+        height: 6.5rem;
+        font-size: 3rem;
+        position: fixed;
+        text-align: center;
+        z-index: 1;
+        background-color: rgba(30,30,30,.85);
+
+        &-title {
+            position: absolute;
+            bottom: 0;
+            transform: translateX(-50%);
+        }
+    }
+
     &-header {
         text-align: center;
         grid-column: 1/11;
@@ -20,7 +36,11 @@
         
         &.inview {
             position: relative;
-            animation: title .65s ease-in;
+        }
+        
+        &.outview {
+            position: relative;
+            top: -100vh;
         }
     }
     
@@ -28,51 +48,36 @@
         font-size: 5rem;
 
         &-thinker {
-
-            &.inview {
-                position: relative;
-            }
+            position: relative;
+            border-right: .2rem solid;
+            padding-right: 1.5rem;
             
             &.outview {
-                animation: thinker 1s ease-in;
-                position: absolute;
+                animation: thinker .75s .45s ease-in;
+                position: relative;
                 left: -100vw;
             }
         }
-        &-creator {
 
-            &.inview {
-                position: relative;
-            }
+        &-creator {
+            position: relative;
+            margin: 0 1.5rem;
             
             &.outview {
-                animation: creator 1s .45s ease-in;
-                position: relative;
-                bottom: -120vh;
+                animation: creator 1s;
+                opacity: 0;
             }
         }
+
         &-developer {
-            
-            &.inview {
-                position: relative;
-            }
-            
+            position: relative;
+            border-left: .2rem solid;
+            padding-left: 1.5rem;
+                        
             &.outview {
-                animation: developer 1s .9s ease-in;
+                animation: developer .75s .75s ease-in;
                 position: relative;
                 right: -100vw;
-            }
-        }
-        &-separator {
-            
-            &.inview {
-                position: relative;
-            }
-            
-            &.outview {
-                animation: separator 1s 1.35s ease-in;
-                position: relative;
-                bottom: -120vh;
             }
         }
     }
