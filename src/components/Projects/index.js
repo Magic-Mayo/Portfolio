@@ -19,7 +19,8 @@ export default function Projects(props){
 
             <Logo
             address={props.github}
-            site='github'/>
+            site='github'
+            margin={true}/>
             
             <p>{props.desc}</p>
 
