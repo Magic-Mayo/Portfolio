@@ -3,5 +3,9 @@ $darkOrange: #c45a14;
 $lightOrange: #ff7e28;
 
 .hidden {
-    display: none;
+    visibility: hidden;
+}
+
+.shake {
+    animation: shake .07s linear;
 }
