@@ -3,67 +3,71 @@ import { useInView } from 'react-intersection-observer';
 
 export default function Header(props){
 
-    const [titleRef, titleView] = useInView({threshold: .75, triggerOnce: true});
+    const [titleRef, titleView] = useInView({threshold: .8});
     const [thinkerView, setThinkerView] = useState(false);
     const [creatorView, setCreatorView] = useState(false);
     const [developerView, setDeveloperView] = useState(false);
-    const [separatorView, setSeparatorView] = useState(false);
+    const [shake, setShake] = useState(false);
 
     useLayoutEffect(()=>{
         setTimeout(() => {
-            return setThinkerView(true);
-        }, 1000);
-        setTimeout(() => {
             return setCreatorView(true);
-        }, 1450);
+        }, 900);
+        setTimeout(() => {
+            return setThinkerView(true);
+        }, 1200);
         setTimeout(() => {
             return setDeveloperView(true);
-        }, 1900);
-        setTimeout(() => {
-            return setSeparatorView(true);
-        }, 2350);
-
+        }, 1500);
+        setTimeout(()=>{
+            return setShake(true)
+        }, 1200)
+        setTimeout(()=>{
+            return setShake(false)
+        }, 1270)
+        setTimeout(()=>{
+            return setShake(true)
+        }, 1500)
+        setTimeout(()=>{
+            return setShake(false)
+        }, 1570)
+        
         return ()=>{
             setThinkerView(false);
             setCreatorView(false);
             setDeveloperView(false);
-            setSeparatorView(false);
         }
     },[titleView])
 
     return (
+        <>
+            <nav className='app-nav' style={!titleView ? {} : {display: 'none'}}>
+                <span className='app-nav-title'>Mike Mayo</span>
+            </nav>
             <header className='app-header' ref={titleRef}>
                 <span
-                className={`app-myName ${!titleView ? 'outview' : 'inview'}`}>
+                className='app-myName' style={titleView ? {} : {display: 'none'}}>
                     Mike Mayo
                 </span>
                 
-                <div className='app-descriptor'>
+                <div className={`app-descriptor ${shake ? 'shake' : ''}`}>
                     <span
-                    className={`app-descriptor-thinker app-descriptor ${!thinkerView ? 'outview' : 'inview'} ${titleView ? '' : 'hidden'}`}>
-                        Thinker&nbsp;
-                    </span>
-
-                    <span
-                    className={`app-descriptor-separator app-descriptor ${separatorView ? 'inview' : 'outview'} ${titleView ? '' : 'hidden'}`}>
-                        |
+                    className={`app-descriptor-thinker app-descriptor ${thinkerView ? 'inview' : 'outview'} ${titleView ? '' : 'hidden'}`}>
+                        Thinker
                     </span>
 
                     <span
                     className={`app-descriptor-creator app-descriptor ${creatorView ? 'inview' : 'outview'} ${titleView ? '' : 'hidden'}`}>
-                        &nbsp;Creator&nbsp;
+                        Creator
                     </span>
 
-                    <span
-                    className={`app-descriptor-separator app-descriptor ${separatorView ? 'inview' : 'outview'} ${titleView ? '' : 'hidden'}`}>
-                        |
-                    </span>
 
                     <span
                     className={`app-descriptor-developer app-descriptor ${developerView ? 'inview' : 'outview'} ${titleView ? '' : 'hidden'}`}>
-                        &nbsp;Developer
+                        Developer
                     </span>
                 </div>
             </header>
+        </>
     )
 }
