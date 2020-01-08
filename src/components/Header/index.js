@@ -3,7 +3,7 @@ import { useInView } from 'react-intersection-observer';
 
 export default function Header(props){
 
-    const [titleRef, titleView] = useInView({threshold: .75});
+    const [titleRef, titleView] = useInView({threshold: .75, triggerOnce: true});
     const [thinkerView, setThinkerView] = useState(false);
     const [creatorView, setCreatorView] = useState(false);
     const [developerView, setDeveloperView] = useState(false);
@@ -32,8 +32,7 @@ export default function Header(props){
     },[titleView])
 
     return (
-        <header className='app-header' ref={titleRef}>
-                
+            <header className='app-header' ref={titleRef}>
                 <span
                 className={`app-myName ${!titleView ? 'outview' : 'inview'}`}>
                     Mike Mayo
