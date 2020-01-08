@@ -1,4 +1,4 @@
-import React, { useLayoutEffect, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useInView } from 'react-intersection-observer';
 
 export default function Header(props){
@@ -9,7 +9,7 @@ export default function Header(props){
     const [developerView, setDeveloperView] = useState(false);
     const [shake, setShake] = useState(false);
 
-    useLayoutEffect(()=>{
+    useEffect(()=>{
         setTimeout(() => {
             return setCreatorView(true);
         }, 900);
