@@ -3,7 +3,7 @@ import { useInView } from 'react-intersection-observer';
 
 export default function Header(props){
 
-    const [titleRef, titleView] = useInView({threshold: .8});
+    const [titleRef, titleView] = useInView({rootMargin: '-450px 0px 0px 0px'});
     const [thinkerView, setThinkerView] = useState(false);
     const [creatorView, setCreatorView] = useState(false);
     const [developerView, setDeveloperView] = useState(false);
@@ -31,12 +31,6 @@ export default function Header(props){
         setTimeout(()=>{
             return setShake(false)
         }, 1570)
-        
-        return ()=>{
-            setThinkerView(false);
-            setCreatorView(false);
-            setDeveloperView(false);
-        }
     },[titleView])
 
     return (
@@ -52,18 +46,18 @@ export default function Header(props){
                 
                 <div className={`app-descriptor ${shake ? 'shake' : ''}`}>
                     <span
-                    className={`app-descriptor-thinker app-descriptor ${thinkerView ? 'inview' : 'outview'} ${titleView ? '' : 'hidden'}`}>
+                    className={`app-descriptor-thinker app-descriptor ${!thinkerView ? 'outview' : '' } ${titleView ? '' : 'hidden'}`}>
                         Thinker
                     </span>
 
                     <span
-                    className={`app-descriptor-creator app-descriptor ${creatorView ? 'inview' : 'outview'} ${titleView ? '' : 'hidden'}`}>
+                    className={`app-descriptor-creator app-descriptor ${creatorView ? '' : 'outview'} ${titleView ? '' : 'hidden'}`}>
                         Creator
                     </span>
 
 
                     <span
-                    className={`app-descriptor-developer app-descriptor ${developerView ? 'inview' : 'outview'} ${titleView ? '' : 'hidden'}`}>
+                    className={`app-descriptor-developer app-descriptor ${developerView ? '' : 'outview'} ${titleView ? '' : 'hidden'}`}>
                         Developer
                     </span>
                 </div>
