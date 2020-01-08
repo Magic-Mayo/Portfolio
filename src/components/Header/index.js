@@ -51,13 +51,13 @@ export default function Header(props){
                     </span>
 
                     <span
-                    className={`app-descriptor-creator app-descriptor ${creatorView ? '' : 'outview'} ${titleView ? '' : 'hidden'}`}>
+                    className={`app-descriptor-creator app-descriptor ${!creatorView ? 'outview' : ''} ${titleView ? '' : 'hidden'}`}>
                         Creator
                     </span>
 
 
                     <span
-                    className={`app-descriptor-developer app-descriptor ${developerView ? '' : 'outview'} ${titleView ? '' : 'hidden'}`}>
+                    className={`app-descriptor-developer app-descriptor ${!developerView ? 'outview' : ''} ${titleView ? '' : 'hidden'}`}>
                         Developer
                     </span>
                 </div>
