@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import Logo from '../Logos'
 
 
-export default function Contact(){
+export default function Contact(props){
     const [contactName, setContactName] = useState('');
     const [contactEmail, setContactEmail] = useState('');
     const [contactMessage, setContactMessage] = useState('');
@@ -34,42 +34,45 @@ export default function Contact(){
     };
 
     return(
-        <section className='contact-form-wrapper'>
-            <span className='contact-form-header'>Contact Mike Mayo</span>
-            <form
-            className='contact-form'
-            netlify='true'
-            name='messages'
-            onSubmit={handleSubmit}>
-                <span>
-                    <input
-                    className='contact-form-name'
-                    placeholder='Your name'
-                    onChange={(e)=>setContactName(e.target.value)}
-                    value={contactName}
-                    type='text'/>
-                    <input
-                    className='contact-form-email'
-                    placeholder='Email address'
-                    onChange={(e)=>setContactEmail(e.target.value)}
-                    value={contactEmail}
-                    type='email'/>
-                </span>
-                <span>
-                    <textarea
-                    className='contact-form-message'
-                    placeholder='Enter message to send to Mike Mayo here!'
-                    onChange={(e)=>setContactMessage(e.target.value)}
-                    value={contactMessage}>
-                    </textarea>
-                </span>
-                <button className='contact-form-submit'>Send!</button>
-            </form>
+        <>
+            <span className={`contact${props.contactView ? '-to-nav' : ''}`}>Contact</span>
+            <h1 className={`contact-form-header${props.contactView ? '' : '-to-nav'}`}>Contact Mike</h1>
+            <section className='contact-form-wrapper' ref={props.contactRef}>
+                <form
+                className='contact-form'
+                netlify='true'
+                name='messages'
+                onSubmit={handleSubmit}>
+                    <span>
+                        <input
+                        className='contact-form-name'
+                        placeholder='Your name'
+                        onChange={(e)=>setContactName(e.target.value)}
+                        value={contactName}
+                        type='text'/>
+                        <input
+                        className='contact-form-email'
+                        placeholder='Email address'
+                        onChange={(e)=>setContactEmail(e.target.value)}
+                        value={contactEmail}
+                        type='email'/>
+                    </span>
+                    <span>
+                        <textarea
+                        className='contact-form-message'
+                        placeholder='Enter message to send to Mike Mayo here!'
+                        onChange={(e)=>setContactMessage(e.target.value)}
+                        value={contactMessage}>
+                        </textarea>
+                    </span>
+                    <button className='contact-form-submit'>Send!</button>
+                </form>
 
-            <p className='contact-other'>...or reach me here</p>
-            <Logo site='linkedin' />
-            <Logo site='github' styles={{margin: '0 2rem'}}/>
-            <Logo site='mail' />
-        </section>
+                <p className='contact-other'>...or reach me here</p>
+                <Logo site='linkedin' />
+                <Logo site='github' styles={{margin: '0 2rem'}}/>
+                <Logo site='mail' />
+            </section>
+        </>
     )
 }
