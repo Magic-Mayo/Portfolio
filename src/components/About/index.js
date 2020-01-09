@@ -1,8 +1,8 @@
 import React from 'react';
-import { useInView } from 'react-intersection-observer';
+import { useOnScreen } from '../../hooks/index';
 
 export default function About(){
-    const [aboutRef, aboutView] = useInView({threshold: .5});
+    const [aboutRef, aboutView] = useOnScreen({rootMargin: '-300px'});
 
     return (
         <>
