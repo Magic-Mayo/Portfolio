@@ -10,6 +10,7 @@
         height: 6.5rem;
         font-size: 3rem;
         position: fixed;
+        top: 0;
         text-align: center;
         z-index: 1;
         background-color: rgba(30,30,30,.85);
@@ -19,13 +20,23 @@
             bottom: 0;
             transform: translateX(-50%);
         }
+
+        &-slide-in {
+            left: 50vw;
+            transition: left 1.2s;
+        }
+        
+        &-slide-out {
+            left: -15vw;
+            transition: left 1.2s;
+        }
+
     }
 
     &-header {
         text-align: center;
         grid-column: 1/11;
         padding-top: 30vh;
-        height: 100vh;
         display: flex;
         flex-direction: column;
     }
