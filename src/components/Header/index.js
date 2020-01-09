@@ -3,7 +3,7 @@ import { useInView } from 'react-intersection-observer';
 import Logo from '../Logos'
 
 export default function Header(props){
-
+  
     const [titleRef, titleView] = useInView({rootMargin: '-81% 0px 0px 0px'});
     const [thinkerView, setThinkerView] = useState(false);
     const [creatorView, setCreatorView] = useState(false);
