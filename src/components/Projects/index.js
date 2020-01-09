@@ -20,7 +20,7 @@ export default function Projects(props){
             <Logo
             address={props.github}
             site='github'
-            margin={true}/>
+            styles={{margin: '2rem 0 0 3rem'}}/>
             
             <p>{props.desc}</p>
 
