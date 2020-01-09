@@ -5,17 +5,29 @@
         justify-content: center;
         flex-direction: column;
         align-items: center;
+        position: relative;
 
         span {
             width: 50%;
         }
+        
         &-wrapper {
             grid-column: 1/11;
             text-align: center;
-            margin: 10rem 0 5rem;
+            margin: 2rem 0 5rem;
             font-size: 3rem;
             position: relative;
 
+            &::after{
+                content: '';
+                position: absolute;
+                border-bottom: solid $lightOrange 1px;
+                top: -1rem;
+                width: 30%;
+                min-width: 300px;
+                left: 50%;
+                transform: translateX(-50%);
+            }
         
             input, textarea {
                 font-family: 'Quicksand', sans-serif;
@@ -37,17 +49,13 @@
         }
 
         &-header {
-            
-            &::after{
-                content: '';
-                position: absolute;
-                border-bottom: solid $teal 1px;
-                top: 3.75rem;
-                width: 30%;
-                min-width: 300px;
-                left: 50%;
-                transform: translateX(-50%);
-            }
+            color: $lightOrange;
+            position: relative;
+            font-size: 5rem;
+            font-weight: bold;
+            text-align: center;
+            grid-column: 1/11;
+            margin-top: 25rem;
         }
 
         &-submit {
