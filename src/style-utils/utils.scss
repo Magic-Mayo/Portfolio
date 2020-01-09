@@ -6,6 +6,14 @@ $lightOrange: #ff7e28;
     visibility: hidden;
 }
 
+.none {
+    display: none;
+}
+
 .shake {
     animation: shake .07s linear;
+}
+
+.shook {
+    animation: shook .07s linear
 }
