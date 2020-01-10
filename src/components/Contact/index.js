@@ -35,9 +35,9 @@ export default function Contact(props){
 
     return(
         <>
-            <span className={`contact${props.contactView ? '-to-nav' : ''}`}>Contact</span>
-            <h1 className={`contact-form-header${props.contactView ? '' : '-to-nav'}`}>Contact Mike</h1>
+            <span className={`contact contact${props.contactView ? '-to-nav' : ''}`}>Contact</span>
             <section className='contact-form-wrapper' ref={props.contactRef}>
+                <h1 className={`contact-form-header contact-form-header${!props.contactView ? '' : '-to-nav'}`}>Contact Mike</h1>
                 <form
                 className='contact-form'
                 netlify='true'

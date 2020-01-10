@@ -9,8 +9,8 @@ import useOnScreen from '../hooks';
 export default function Portfolio(){
 
     const [aboutRef, aboutView] = useOnScreen({rootMargin: '-600px 0px -300px 0px'});
-    const [contactRef, contactView] = useOnScreen({threshold: .5});
-    const [projectRef, projectView] = useOnScreen({rootMargin: '-100px 0px 200px 0px'});
+    const [projectRef, projectView] = useOnScreen({rootMargin: '-500px 0px 200px 0px'});
+    const [contactRef, contactView] = useOnScreen({rootMargin: '-200px'});
 
     return (
         <>
@@ -19,9 +19,9 @@ export default function Portfolio(){
             aboutRef={aboutRef}
             aboutView={aboutView}
             />
-            <span className={`project${projectView ? '-to-nav' : '-off'}`}>Projects</span>
-            <h1 className={`project-header${!projectView ? '' : '-to-nav'}`}>Projects</h1>
+            <span className={`project-nav${projectView ? '-to' : '-off'}`}>Projects</span>
             <section className='project-wrapper' ref={projectRef}>
+                <h1 className={`project-header project-header${!projectView ? '' : '-to-nav'}`}>Projects</h1>
                 <span className='project-container'>
                     {projectData[0].map(project=>{
                         return <Projects
