@@ -1,6 +1,19 @@
 .contact {
+    position: fixed;
+    left: -15vw;
+    font-size: 2rem;
+    transition: left 1s;
+    z-index: 1;
+    color: $lightOrange;
+    transform: translateX(-50%);
+    
+    &-to-nav {
+        transition: left 1s .8s;
+        left: 50%;
+    }
+
     &-form {
-        margin-top: 2rem;
+        margin-top: 5rem;
         display: flex;
         justify-content: center;
         flex-direction: column;
@@ -14,7 +27,7 @@
         &-wrapper {
             grid-column: 1/11;
             text-align: center;
-            margin: 2rem 0 5rem;
+            margin: 25rem 0 5rem;
             font-size: 3rem;
             position: relative;
 
@@ -22,8 +35,8 @@
                 content: '';
                 position: absolute;
                 border-bottom: solid $lightOrange 1px;
-                top: -1rem;
-                width: 30%;
+                top: 6.5rem;
+                width: 40%;
                 min-width: 300px;
                 left: 50%;
                 transform: translateX(-50%);
@@ -52,10 +65,13 @@
             color: $lightOrange;
             position: relative;
             font-size: 5rem;
-            font-weight: bold;
-            text-align: center;
-            grid-column: 1/11;
-            margin-top: 25rem;
+            left: 0;
+            transition: left 1s 1s;
+            
+            &-to-nav {
+                transition: left 1s;
+                left: -100vw;
+            }
         }
 
         &-submit {
