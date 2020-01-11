@@ -8,20 +8,22 @@ import useOnScreen from '../hooks';
 
 export default function Portfolio(){
 
-    const [aboutRef, aboutView] = useOnScreen({rootMargin: '-600px 0px -300px 0px'});
-    const [projectRef, projectView] = useOnScreen({rootMargin: '-500px 0px 200px 0px'});
-    const [contactRef, contactView] = useOnScreen({rootMargin: '-200px'});
+    const [headerRef, headerOnScreen] = useOnScreen({threshold: .3},'header')
+    const [projectRef, projectOnScreen] = useOnScreen({threshold: .15},'project');
+    const [aboutRef, aboutOnScreen] = useOnScreen({threshold: .4},'about');
+    const [contactRef, contactOnScreen] = useOnScreen({threshold: .5},'contact');
 
     return (
         <>
-            <Header />
-            <About
-            aboutRef={aboutRef}
-            aboutView={aboutView}
+            <Header
+            headerOnScreen={headerOnScreen}
+            headerRef={headerRef}
+            aboutOnScreen={aboutOnScreen}
+            projectOnScreen={projectOnScreen}
+            contactOnScreen={contactOnScreen}
             />
-            <span className={`project-nav${projectView ? '-to' : '-off'}`}>Projects</span>
-            <section className='project-wrapper' ref={projectRef}>
-                <h1 className={`project-header project-header${!projectView ? '' : '-to-nav'}`}>Projects</h1>
+            <span className={`project-nav project-nav${projectOnScreen && !headerOnScreen ? '-to' : ''}`}>Projects</span>
+            <section className={`project-wrapper ${headerOnScreen || aboutOnScreen ? 'transparent' : 'opaque'}`} ref={projectRef}>
                 <span className='project-container'>
                     {projectData[0].map(project=>{
                         return <Projects
@@ -62,9 +64,18 @@ export default function Portfolio(){
                     })}
                 </span>
             </section>
+            <About
+            aboutRef={aboutRef}
+            aboutOnScreen={aboutOnScreen}
+            contactOnScreen={contactOnScreen}
+            projectOnScreen={projectOnScreen}
+            />
+
             <Contact
             contactRef={contactRef}
-            contactView={contactView} />
+            contactOnScreen={contactOnScreen}
+            aboutOnScreen={aboutOnScreen}
+            />
         </>
     )
 }
