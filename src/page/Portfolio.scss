@@ -3,7 +3,7 @@
     color: $teal;
     display: grid;
     grid-template-columns: repeat(10, 1fr);
-    grid-template-rows: .35fr 5rem .35fr 30rem .35fr 15rem .35fr 15rem;
+    grid-template-rows: .35fr 5rem .35fr 30rem .35fr 15rem .35fr 10rem;
 
     &-nav {
         width: 100%;
@@ -11,12 +11,11 @@
         font-size: 3rem;
         position: fixed;
         top: 0;
-        text-align: center;
         z-index: 1;
         background-color: rgba(30,30,30,.85);
 
         &-title {
-            position: absolute;
+            position: fixed;
             transform: translate(-50%, 30%);                    
         }
         
@@ -26,23 +25,21 @@
             
             &:after {
                 content: "";
-                position: relative;
             }
             
             &.app-nav-title {
                 &-down {
-                    position: absolute;
+                    position: fixed;
                     transform: translate(-50%, 67%);
-                    transition: transform 1s;
+                    transition: transform 1s .7s;
                 }
                 
                 &-up {
-                    transition: transform 1s .2s;
+                    transition: transform 1s .2s, left 1.2s;
                     transform: translate(-50%, 0%);
                     
                     &:after {
                         content: "'s";
-                        position: relative;
                     }
                 }
             }

@@ -6,21 +6,11 @@
     position: relative;
     text-align: center;
 
-    &::after{
+    &::before {
         content: '';
         position: absolute;
         border-bottom: solid $darkOrange 1px;
         top: -2.5rem;
-        width: 30%;
-        left: 50%;
-        transform: translateX(-50%);
-    }
-
-    &::before{
-        content: '';
-        position: absolute;
-        border-bottom: solid $darkOrange 1px;
-        bottom: -.5rem;
         width: 30%;
         left: 50%;
         transform: translateX(-50%);
@@ -33,6 +23,20 @@
         &:hover {
             background-color: #aaaaaa;
             color: $darkOrange;
+        }
+
+        &:last-of-type {
+            position: relative;
+
+            &::after {
+                content: '';
+                position: absolute;
+                border-bottom: solid $darkOrange 1px;
+                bottom: -3.5rem;
+                width: 30%;
+                left: 50%;
+                transform: translateX(-50%);
+            }
         }
     }
     
@@ -48,14 +52,8 @@
     font-size: 2.2rem;
     z-index: 1;
 
-    &-wrapper {
-        position: relative;
-    }
-
     &-to-nav {
         transition: left 1s .7s;
-        position: fixed;
-        top: 0;
         left: 50%;
         transform: translateX(-50%);
     }
