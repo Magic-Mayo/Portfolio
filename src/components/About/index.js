@@ -1,15 +1,11 @@
 import React from 'react';
-import { useOnScreen } from '../../hooks/index';
 
-export default function About(){
-    const [aboutRef, aboutView] = useOnScreen({rootMargin: '-300px'});
+export default function About(props){
 
     return (
         <>
-            <span className={`about about${!aboutView ? '' : '-to-nav'}`}>About</span>
-            <h2 className={`about-title about-title${aboutView ? '' : '-to-nav'}`}>About Mike</h2>
-
-            <section className='intro' ref={aboutRef} >
+            <span className={`about about${!props.aboutOnScreen || props.contactOnScreen ? '' : '-to-nav'}`}>About</span>
+            <section className={`intro ${props.contactOnScreen || props.projectOnScreen ? 'transparent' : 'opaque'}`} ref={props.aboutRef} >
                 <p>
                     I'll start with a little history on myself and how I came to this point. I began my adult life
                     serving five years in the US Air Force as an Avionics System Technician on F-16 aircraft. I enjoyed
