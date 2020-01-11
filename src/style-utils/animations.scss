@@ -27,3 +27,8 @@
     30%, 50%, 70% {transform: translate3d(-.6rem, 0, 0)}
     40%, 60% {transform: translate3d(6rem, 0, 0)}
 }
+
+@keyframes shift-up {
+    0% {transform: translate(-50%, 67%);}
+    100% {transform: translate(-50%, 0%);}
+}
