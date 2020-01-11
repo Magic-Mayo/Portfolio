@@ -8,6 +8,7 @@
     
     &-wrapper {
         grid-column: 1/11;
+        grid-row: 3/4;
         text-align: center;
         position: relative;
         display: flex;
@@ -18,7 +19,7 @@
         width: 100%;
         display: inline-flex;
         justify-content: center;
-
+        
         &:first-of-type {
             .project:last-of-type {
                 border-right: .4rem solid;
@@ -28,7 +29,7 @@
                     border: none;
                 }
             }
-
+            
             .project:first-of-type {
                 border-left: .4rem solid;
                 border-top: .4rem solid;
@@ -62,21 +63,6 @@
         }
     }
     
-    &-header {
-        font-size: 5rem;
-        margin-bottom: 8.5rem;
-
-        &::after{
-            content: '';
-            position: absolute;
-            border-bottom: solid $teal .1rem;
-            top: 7.5rem;
-            width: 30%;
-            left: 50%;
-            transform: translateX(-50%);
-        }
-    }
-
     &:hover {
         box-shadow: #dddddd 0 0 .8rem .5rem;
         border: none;
@@ -99,6 +85,25 @@
         margin: 0 0 1.5rem;
     }
 
+    &-nav {
+        position: fixed;
+        left: 50%;
+        font-size: 0;
+        top: 3.5rem;
+        transform: translateX(-50%);
+        z-index: 1;
+        color: $teal;
+        transition: font-size 1s, color 1s;
+        
+        &-to {
+            transform: translateX(-42%);
+            transition: font-size 1s .8s, color 1s;
+            position: fixed;
+            font-size: 2.2rem;
+            color: $lightOrange;
+        }
+
+    }
     
     .img {
         width: 100%;

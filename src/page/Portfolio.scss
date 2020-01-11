@@ -3,7 +3,7 @@
     color: $teal;
     display: grid;
     grid-template-columns: repeat(10, 1fr);
-    grid-template-rows: 130vh;
+    grid-template-rows: .35fr 5rem .35fr 30rem .35fr 15rem .35fr 15rem;
 
     &-nav {
         width: 100%;
@@ -17,13 +17,35 @@
 
         &-title {
             position: absolute;
-            bottom: 0;
-            transform: translateX(-50%);
+            transform: translate(-50%, 30%);                    
         }
-
+        
         &-slide-in {
-            left: 50vw;
-            transition: left 1.2s;
+            left: 50%;
+            transition: left 1.2s, transform 1s 1s;
+            
+            &:after {
+                content: "";
+                position: relative;
+            }
+            
+            &.app-nav-title {
+                &-down {
+                    position: absolute;
+                    transform: translate(-50%, 67%);
+                    transition: transform 1s;
+                }
+                
+                &-up {
+                    transition: transform 1s .2s;
+                    transform: translate(-50%, 0%);
+                    
+                    &:after {
+                        content: "'s";
+                        position: relative;
+                    }
+                }
+            }
         }
         
         &-slide-out {
@@ -34,9 +56,11 @@
     }
 
     &-header {
-        text-align: center;
         grid-column: 1/11;
-        padding-top: 30vh;
+        grid-row: 1/2;
+        text-align: center;
+        padding-top: 32vh;
+        height: 60vh;
         display: flex;
         flex-direction: column;
     }

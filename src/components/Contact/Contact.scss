@@ -1,21 +1,47 @@
 .contact {
+    position: fixed;
+    left: -15vw;
+    font-size: 2.2rem;
+    transition: left 1s, color 1s;
+    z-index: 1;
+    color: $teal;
+    transform: translateX(-50%);
+    
+    &-to-nav {
+        transition: left 1s .8s, color 1s;
+        left: 50%;
+        color: $lightOrange;
+    }
+
     &-form {
-        margin-top: 2rem;
+        margin-top: 5rem;
         display: flex;
         justify-content: center;
         flex-direction: column;
         align-items: center;
+        position: relative;
 
         span {
             width: 50%;
         }
+        
         &-wrapper {
             grid-column: 1/11;
+            grid-row: 7/8;
             text-align: center;
-            margin: 10rem 0 5rem;
             font-size: 3rem;
             position: relative;
 
+            &::after{
+                content: '';
+                position: absolute;
+                border-bottom: solid $teal 1px;
+                top: 1.5rem;
+                width: 40%;
+                min-width: 300px;
+                left: 50%;
+                transform: translateX(-50%);
+            }
         
             input, textarea {
                 font-family: 'Quicksand', sans-serif;
@@ -34,20 +60,6 @@
                 height: 25rem;
             }
 
-        }
-
-        &-header {
-            
-            &::after{
-                content: '';
-                position: absolute;
-                border-bottom: solid $teal 1px;
-                top: 3.75rem;
-                width: 30%;
-                min-width: 300px;
-                left: 50%;
-                transform: translateX(-50%);
-            }
         }
 
         &-submit {

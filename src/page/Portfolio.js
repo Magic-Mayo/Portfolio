@@ -1,15 +1,29 @@
 import React from 'react';
+import Header from '../components/Header'
 import About from '../components/About';
 import Projects from '../components/Projects';
 import Contact from '../components/Contact';
 import projectData from '../data/projects.json'
+import useOnScreen from '../hooks';
 
 export default function Portfolio(){
+
+    const [headerRef, headerOnScreen] = useOnScreen({threshold: .3},'header')
+    const [projectRef, projectOnScreen] = useOnScreen({threshold: .15},'project');
+    const [aboutRef, aboutOnScreen] = useOnScreen({threshold: .4},'about');
+    const [contactRef, contactOnScreen] = useOnScreen({threshold: .5},'contact');
+
     return (
         <>
-            <About />
-            <section className='project-wrapper'>
-                <h1 className='project-header'>Projects</h1>
+            <Header
+            headerOnScreen={headerOnScreen}
+            headerRef={headerRef}
+            aboutOnScreen={aboutOnScreen}
+            projectOnScreen={projectOnScreen}
+            contactOnScreen={contactOnScreen}
+            />
+            <span className={`project-nav project-nav${projectOnScreen && !headerOnScreen ? '-to' : ''}`}>Projects</span>
+            <section className={`project-wrapper ${headerOnScreen || aboutOnScreen ? 'transparent' : 'opaque'}`} ref={projectRef}>
                 <span className='project-container'>
                     {projectData[0].map(project=>{
                         return <Projects
@@ -50,7 +64,18 @@ export default function Portfolio(){
                     })}
                 </span>
             </section>
-            <Contact />
+            <About
+            aboutRef={aboutRef}
+            aboutOnScreen={aboutOnScreen}
+            contactOnScreen={contactOnScreen}
+            projectOnScreen={projectOnScreen}
+            />
+
+            <Contact
+            contactRef={contactRef}
+            contactOnScreen={contactOnScreen}
+            aboutOnScreen={aboutOnScreen}
+            />
         </>
     )
 }

@@ -1,16 +1,14 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import {BrowserRouter as Router, Route}from 'react-router-dom';
+// import {BrowserRouter as Router, Route}from 'react-router-dom';
 import './index.scss';
-import App from './App';
+import Portfolio from './page/Portfolio';
 import * as serviceWorker from './serviceWorker';
 
 ReactDOM.render(
-    <Router>
-        <Route path="/">
-            <App />
-        </Route>
-    </Router>,
+    <div className='app'>
+        <Portfolio />
+    </div>,
     document.getElementById('root')
 );
 
