@@ -1,8 +1,8 @@
 import { useState, useEffect } from 'react';
 
-export function useOnScreen(options){
+export function useOnScreen(options, initialize = false){
     const [ref, setRef] = useState(null);
-    const [onScreen, setOnScreen] = useState(false);
+    const [onScreen, setOnScreen] = useState(initialize);
 
     useEffect(()=>{
         const observer = new IntersectionObserver(([entry])=>{
