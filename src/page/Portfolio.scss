@@ -35,7 +35,7 @@
                 }
                 
                 &-up {
-                    transition: transform 1s .2s;
+                    transition: transform 1s .2s, left 1.2s;
                     transform: translate(-50%, 0%);
                     
                     &:after {
