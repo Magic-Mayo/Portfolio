@@ -16,12 +16,12 @@
 
         &-title {
             position: fixed;
-            transform: translate(-50%, 30%);                    
+            left: 50%;
+            transform: translate(-50%, 30%);
         }
         
         &-slide-in {
-            left: 50%;
-            transition: left 1.2s, transform 1s 1s;
+            transition: transform 1s 1s;
             
             &:after {
                 content: "";
@@ -46,8 +46,8 @@
         }
         
         &-slide-out {
-            left: -15vw;
-            transition: left 1.2s;
+            transform: translate(-700%, 30%);
+            transition: transform 1.2s;
         }
 
     }

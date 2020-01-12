@@ -8,10 +8,10 @@ import useOnScreen from '../hooks';
 
 export default function Portfolio(){
 
-    const [headerRef, headerOnScreen] = useOnScreen({threshold: .3},'header')
-    const [projectRef, projectOnScreen] = useOnScreen({threshold: .15},'project');
-    const [aboutRef, aboutOnScreen] = useOnScreen({threshold: .4},'about');
-    const [contactRef, contactOnScreen] = useOnScreen({threshold: .5},'contact');
+    const [headerRef, headerOnScreen] = useOnScreen({threshold: .3}, true);
+    const [projectRef, projectOnScreen] = useOnScreen({threshold: .15});
+    const [aboutRef, aboutOnScreen] = useOnScreen({threshold: .4});
+    const [contactRef, contactOnScreen] = useOnScreen({threshold: .5});
 
     return (
         <>
