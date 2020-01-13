@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
-import Logo from '../Logos'
+import Logo from '../Logos';
+import Envelope from '../Logos/Envelope';
 
 
 export default function Contact(props){
@@ -13,6 +14,14 @@ export default function Contact(props){
             .join("&");
     }
 
+    const sendMessage = () => {
+
+    }
+
+    const handleEnvelopeClick = () => {
+        
+    }
+
     const handleSubmit = e => {
         e.preventDefault();
 
@@ -24,6 +33,7 @@ export default function Contact(props){
             })
             .then(() => alert("Your message is on the way!"))
             .catch(error => alert(error));
+            
             
             setContactMessage('');
             setContactName('');
