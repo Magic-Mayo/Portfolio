@@ -33,7 +33,7 @@ export default function Header(props){
                 <Logo
                 site='linkedin'
                 inView={props.headerOnScreen}
-                styles={{margin: '.75rem 1.5rem', position: 'absolute'}}
+                styles={{margin: '.75rem 1.5rem', position: 'fixed'}}
                 nav={true} />
 
                 <span
@@ -45,7 +45,7 @@ export default function Header(props){
                 <Logo
                 site='github'
                 inView={props.headerOnScreen}
-                styles={{margin: '.75rem 1.5rem', position: 'absolute'}} 
+                styles={{margin: '.75rem 1.5rem', position: 'fixed'}} 
                 nav={true}/>
             </nav>
 

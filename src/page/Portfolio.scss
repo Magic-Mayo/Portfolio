@@ -3,7 +3,7 @@
     color: $teal;
     display: grid;
     grid-template-columns: repeat(10, 1fr);
-    grid-template-rows: .35fr 5rem .35fr 30rem .35fr 15rem .35fr 10rem;
+    grid-template-rows: .35fr 1% .35fr 6% .35fr 3% .35fr;
 
     &-nav {
         width: 100%;
@@ -46,8 +46,7 @@
         }
         
         &-slide-out {
-            transform: translate(-700%, 30%);
-            transition: transform 1.2s;
+            transform: translate(-1000%, 30%);
         }
 
     }
