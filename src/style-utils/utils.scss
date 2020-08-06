@@ -27,3 +27,38 @@ $lightOrange: #ff7e28;
 .shook {
     animation: shook .07s linear
 }
+
+a {
+    text-decoration: none;
+    color: $teal;
+}
+
+.link-arrow {
+    position: fixed;
+    bottom: 25px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 5;
+    fill: $lightOrange;
+    color: $lightOrange;
+    font-size: 20px;
+    height: fit-content;
+
+    .down-arrow {
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+
+        svg {
+            width: 65px;
+        }
+    }
+
+    &.up-arrow {
+        top: 25px;
+
+        svg {
+            transform: rotateX(180deg);
+        }
+    }
+}
