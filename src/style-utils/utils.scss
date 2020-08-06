@@ -43,6 +43,11 @@ a {
     color: $lightOrange;
     font-size: 20px;
     height: fit-content;
+    opacity: .7;
+
+    &:hover {
+        opacity: 1;
+    }
 
     .down-arrow {
         display: flex;
@@ -56,8 +61,10 @@ a {
 
     &.up-arrow {
         top: 25px;
+        color: $teal;
 
         svg {
+            fill: $teal;
             transform: rotateX(180deg);
         }
     }
