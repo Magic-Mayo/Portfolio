@@ -1,7 +1,3 @@
-@keyframes title {
-    100% {top: 0; position: relative;}
-}
-
 @keyframes thinker {
     100% {left: 0; position: relative;}
 }
@@ -26,9 +22,4 @@
     20%, 80% {transform: translate3d(.3rem, 0, 0)}
     30%, 50%, 70% {transform: translate3d(-.6rem, 0, 0)}
     40%, 60% {transform: translate3d(6rem, 0, 0)}
-}
-
-@keyframes shift-up {
-    0% {transform: translate(-50%, 67%);}
-    100% {transform: translate(-50%, 0%);}
 }
