@@ -33,8 +33,7 @@ export default function Contact(props){
             })
             .then(() => alert("Your message is on the way!"))
             .catch(error => alert(error));
-            
-            
+
             setContactMessage('');
             setContactName('');
             setContactEmail('');
@@ -44,44 +43,45 @@ export default function Contact(props){
     };
 
     return(
-        <>
-            <span className={`contact contact${props.contactOnScreen ? '-to-nav' : ''}`}>Contact</span>
-            <section className={`contact-form-wrapper ${props.aboutOnScreen ? 'transparent' : 'opaque'}`} ref={props.contactRef}>
-                <form
-                className='contact-form'
-                netlify='true'
-                name='messages'
-                onSubmit={handleSubmit}>
-                    <span>
-                        <input
-                        className='contact-form-name'
-                        placeholder='Your name'
-                        onChange={(e)=>setContactName(e.target.value)}
-                        value={contactName}
-                        type='text'/>
-                        <input
-                        className='contact-form-email'
-                        placeholder='Email address'
-                        onChange={(e)=>setContactEmail(e.target.value)}
-                        value={contactEmail}
-                        type='email'/>
-                    </span>
-                    <span>
-                        <textarea
-                        className='contact-form-message'
-                        placeholder='Enter message to send to Mike Mayo here!'
-                        onChange={(e)=>setContactMessage(e.target.value)}
-                        value={contactMessage}>
-                        </textarea>
-                    </span>
-                    <button className='contact-form-submit'>Send!</button>
-                </form>
+        <section className='contact-form-wrapper'>
+            <p className='contact-header'>Contact</p>
+            <form
+            className='contact-form'
+            netlify='true'
+            name='messages'
+            onSubmit={handleSubmit}
+            >
+                <div className='contact-form-input'>
+                    <input
+                    className='contact-form-name'
+                    placeholder='Your name'
+                    onChange={(e) => setContactName(e.target.value)}
+                    value={contactName}
+                    type='text'/>
+                    <input
+                    className='contact-form-email'
+                    placeholder='Email address'
+                    onChange={(e) => setContactEmail(e.target.value)}
+                    value={contactEmail}
+                    type='email'/>
+                </div>
+                <div className='contact-form-input'>
+                    <textarea
+                    className='contact-form-message'
+                    placeholder='Enter message to send to Mike Mayo here!'
+                    onChange={(e) => setContactMessage(e.target.value)}
+                    value={contactMessage}>
+                    </textarea>
+                </div>
+                <button className='contact-form-submit'>Send!</button>
+            </form>
 
-                <p className='contact-other'>...or reach me here</p>
+            <p className='contact-other'>...or reach me here</p>
+            <div>
                 <Logo site='linkedin' />
                 <Logo site='github' styles={{margin: '0 2rem'}}/>
                 <Logo site='mail' />
-            </section>
-        </>
+            </div>
+        </section>
     )
 }
