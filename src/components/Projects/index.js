@@ -21,7 +21,6 @@ export default ({github, name, address, img, gif, description, showProject}) => 
             <Logo
             address={github}
             site='github'
-            styles={{margin: '2rem 0 0 3rem'}}
             />
             
             <p>{description}</p>
