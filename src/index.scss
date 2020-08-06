@@ -6,15 +6,16 @@
 @import './components/About/About.scss';
 @import './components/Projects/Projects.scss';
 @import './components/Contact/Contact.scss';
+@import './components/Nav/Nav.scss';
 
 body {
   margin: 0;
-  background-image: url('./assets/port.png');
+  background-image: url('./assets/port.webp');
   background-size: contain;
-  background-repeat: repeat;
+  background-attachment: fixed;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  color: #dddddd;
+  color: $teal;
   height: 100vh;
   font-family: 'Quicksand', sans-serif;
   overflow-x: hidden;
@@ -22,6 +23,11 @@ body {
 
 html {
     font-size: 10px;
+    scrollbar-width: 0;
+}
+
+::-webkit-scrollbar {
+    width: 0;
 }
 
 * {
@@ -33,4 +39,8 @@ html {
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
+}
+
+li {
+    list-style: none;
 }
