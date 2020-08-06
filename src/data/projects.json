@@ -1,5 +1,5 @@
 [
-    [{
+    {
         "name": "Under the Weather",
         "github": "Under-the-Weather",
         "address": "http://under-the-weather.herokuapp.com",
@@ -14,8 +14,8 @@
         "img": "archerpi.png",
         "gif": "archer.gif",
         "description": "This was one of the first apps I made using React.  Demonstrates the single page application and how it can be used to render content very quick.  Simple but a fun concept and small things like this can be used for practice."
-    }],
-    [{
+    },
+    {
         "name": "Park U",
         "github": "Park-U",
         "address": "http://park-u.herokuapp.com",
@@ -30,8 +30,8 @@
         "img": "flip-it.png",
         "gif": "flip-it.gif",
         "description": "I made this app to demonstrate a little bit of front-end design and some simple functionality.  Has a theme that you may or may not pick up on ;)"
-    }],
-    [{
+    },
+    {
         "name": "Parks and Rec Trivia",
         "github": "TriviaGame",
         "address": "https://Magic-Mayo.github.io/TriviaGame",
@@ -46,5 +46,5 @@
         "img": "gallows.jpg",
         "gif": "gallows.gif",
         "description": "This was my first real project with javascript and designing/building a webpage on my own.  This was a challenge for me not only because I like to choose more difficult tasks to take on but also because there was a huge learning curve as I went into this knowing very little.  In the end I found it turned out better than I had initially hoped!"
-    }]
+    }
 ]
