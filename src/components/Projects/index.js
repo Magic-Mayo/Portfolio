@@ -1,41 +1,50 @@
 import React, {useState} from 'react';
 import Logo from '../Logos';
 
-export default function Projects(props){
+export default ({github, name, address, img, gif, description, showProject}) => {
 
     const [hoverText, setHoverText] = useState(false);
     const [opacity, setOpacity] = useState(1);
-    const [gifSrc, setgifSrc] = useState(false);
+    const [gifSrc, setGifSrc] = useState(false);
 
     return (
         <div
-        className={`project project-${props.github}`}
-        onMouseEnter={()=>setgifSrc(true)}
-        onMouseLeave={()=>setgifSrc(false)}>
+        className={`project project-${github} ${showProject ? 'current' : ''}`}
+        onMouseEnter={() => setGifSrc(true)}
+        onMouseLeave={() => setGifSrc(false)}
+        >
             
-            <h1 className={`project-title project-title-${props.name}`}>
-                {props.name}
+            <h1 className={`project-title project-title-${name}`}>
+                {name}
             </h1>
 
             <Logo
-            address={props.github}
+            address={github}
             site='github'
-            styles={{margin: '2rem 0 0 3rem'}}/>
+            styles={{margin: '2rem 0 0 3rem'}}
+            />
             
-            <p>{props.desc}</p>
+            <p>{description}</p>
 
             <span
             className='img-container'
-            onClick={()=>window.open(`${props.address}`, '_blank','')}
-            onMouseEnter={()=>{setHoverText(true);setOpacity(.3)}}
-            onMouseLeave={()=>{setHoverText(false);setOpacity(1)}}>
+            onClick={() => window.open(`${address}`, '_blank','')}
+            onMouseEnter={() => {
+                setHoverText(true);
+                setOpacity(.3);
+            }}
+            onMouseLeave={() => {
+                setHoverText(false);
+                setOpacity(1);
+            }}
+            >
 
                 <img
-                src={require(`../../assets/${gifSrc ? props.gif : props.img}`)}
+                src={require(`../../assets/${gifSrc ? img : gif}`)}
+                alt={name}
                 style={{opacity: opacity}}
-                alt={props.name}
-                className={`img img-${props.github}`}>
-                </img>
+                className={`img img-${github}`}
+                />
 
                 {hoverText && 
                     <span
