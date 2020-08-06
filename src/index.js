@@ -4,11 +4,12 @@ import ReactDOM from 'react-dom';
 import './index.scss';
 import Portfolio from './page/Portfolio';
 import * as serviceWorker from './serviceWorker';
+import { BrowserRouter as Router } from 'react-router-dom';
 
 ReactDOM.render(
-    <div className='app'>
+    <Router>
         <Portfolio />
-    </div>,
+    </Router>,
     document.getElementById('root')
 );
 
