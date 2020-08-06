@@ -1,16 +1,18 @@
 .contact {
-    position: fixed;
-    left: -15vw;
-    font-size: 2.2rem;
-    transition: left 1s, color 1s;
-    z-index: 1;
-    color: $teal;
-    transform: translateX(-50%);
-    
-    &-to-nav {
-        transition: left 1s .8s, color 1s;
-        left: 50%;
-        color: $lightOrange;
+    &-header {
+        font-size: 5rem;
+
+        &::after {
+            content: '';
+            position: absolute;
+            border-bottom: 2px $teal solid;
+            width: 40%;
+            min-width: 300px;
+            max-width: 600px;
+            height: 6.5rem;
+            left: 50%;
+            transform: translateX(-50%);
+        }
     }
 
     &-form {
@@ -20,30 +22,21 @@
         flex-direction: column;
         align-items: center;
         position: relative;
-
-        span {
-            width: 50%;
-        }
         
+        &-input {
+            width: 50%;
+            min-width: 250px;
+        }
+
         &-wrapper {
-            grid-column: 1/11;
-            grid-row: 7/8;
             text-align: center;
             font-size: 3rem;
             position: relative;
-            margin-bottom: 10%;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            height: 100vh;
 
-            &::after{
-                content: '';
-                position: absolute;
-                border-bottom: solid $teal 1px;
-                top: 1.5rem;
-                width: 40%;
-                min-width: 300px;
-                left: 50%;
-                transform: translateX(-50%);
-            }
-        
             input, textarea {
                 font-family: 'Quicksand', sans-serif;
                 font-size: 2rem;
@@ -72,7 +65,7 @@
             font-size: 2rem;
             margin-top: 3rem;
             width: 10%;
-            min-width: 7.5rem;
+            min-width: 9.5rem;
             box-shadow: #555555 .5rem .5rem 2rem;
             
             &:hover {
