@@ -1,11 +1,10 @@
 import React from 'react';
 
-export default function About(props){
+export default () => {
 
     return (
         <>
-            <span className={`about about${!props.aboutOnScreen || props.contactOnScreen ? '' : '-to-nav'}`}>About</span>
-            <section className={`intro ${props.contactOnScreen || props.projectOnScreen ? 'transparent' : 'opaque'}`} ref={props.aboutRef} >
+            <section className='intro'>
                 <p>
                     I'll start with a little history on myself and how I came to this point. I began my adult life
                     serving five years in the US Air Force as an Avionics System Technician on F-16 aircraft. I enjoyed
