@@ -63,12 +63,6 @@
     top: 0;
     font-size: 3.6rem;
     z-index: 2;
-    transition: transform .6s;
-    
-    @media screen and (max-width: 560px) {
-        transform: translateX(29vw);
-        transition: transform .5s .6s;
-    }
     
     a:first-of-type > span {
         background-color: $red;
@@ -113,7 +107,7 @@
 
         @media screen and (max-width: 560px){
             transition: all .5s;
-            transform: rotateZ(180deg) translateY(74px);
+            transform: rotateZ(180deg) translateY(54px);
             border-bottom-left-radius: 15px;
             border-top-left-radius: 15px;
             border-top-right-radius: 0;
