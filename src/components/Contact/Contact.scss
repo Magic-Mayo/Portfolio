@@ -1,18 +1,6 @@
 .contact {
     &-header {
         font-size: 5rem;
-
-        &::after {
-            content: '';
-            position: absolute;
-            border-bottom: 2px $teal solid;
-            width: 40%;
-            min-width: 300px;
-            max-width: 600px;
-            height: 6.5rem;
-            left: 50%;
-            transform: translateX(-50%);
-        }
     }
 
     &-form {
@@ -34,8 +22,13 @@
             position: relative;
             display: flex;
             flex-direction: column;
-            justify-content: flex-end;
-            height: 100vh;
+            justify-content: center;
+            margin-top: 10rem;
+            height: calc(100vh - 10rem);
+
+            @media screen and (max-width: 675px) {
+                padding-top: 5rem;
+            }
 
             input, textarea {
                 font-family: 'Quicksand', sans-serif;
@@ -54,10 +47,14 @@
                 height: 25rem;
             }
 
+            div > div {
+                display: inline-block;
+            }
+
         }
 
         &-submit {
-            background-color: $darkOrange;
+            background-color: $dullBlue;
             border-radius: .5rem;
             border: none;
             padding: .5rem .3rem;
@@ -71,7 +68,7 @@
             &:hover {
                 box-shadow: #555555 -.5rem -.5rem 2rem;
                 cursor: pointer;
-                background-color: $lightOrange;
+                background-color: $red;
             }
         }
     }
