@@ -13,7 +13,12 @@ export default () => {
     return (
         <>
             <span className='site-title'>
-                <span>Mike</span><span>Mayo</span>
+                <Link to='/'>
+                    <span>Mike</span>
+                </Link>
+                <Link to='/'>
+                    <span>Mayo</span>
+                </Link>
             </span>
             <nav className='nav'>
                 <ul>
