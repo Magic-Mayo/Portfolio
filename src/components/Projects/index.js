@@ -1,7 +1,7 @@
 import React, {useState} from 'react';
 import Logo from '../Logos';
 
-export default ({github, name, address, img, gif, description, showProject}) => {
+export default ({github, name, address, img, gif, description, showProject, innerWidth}) => {
 
     const [hoverText, setHoverText] = useState(false);
     const [opacity, setOpacity] = useState(1);
@@ -28,16 +28,6 @@ export default ({github, name, address, img, gif, description, showProject}) => 
             <div
             className='img-container'
             onClick={() => window.open(`${address}`, '_blank','')}
-            onMouseEnter={() => {
-                setHoverText(true);
-                setOpacity(.3);
-                setGifSrc(true)
-            }}
-            onMouseLeave={() => {
-                setHoverText(false);
-                setOpacity(1);
-                setGifSrc(false)
-            }}
             >
 
                 <img
@@ -45,8 +35,47 @@ export default ({github, name, address, img, gif, description, showProject}) => 
                 alt={name}
                 style={{opacity: opacity}}
                 className={`img img-${github}`}
+                onMouseEnter={() => {
+                    setHoverText(true);
+                    setOpacity(.3);
+                    setGifSrc(true)
+                }}
+                onMouseLeave={() => {
+                    setHoverText(false);
+                    setOpacity(1);
+                    setGifSrc(false)
+                }}
                 />
                 
+                {innerWidth > 800 &&
+                    <div className='img-links'>
+                        <a
+                        href={address}
+                        rel='noopener noreferrer'
+                        target='_blank'
+                        >
+                            <Logo />
+                        </a>
+
+                        <Logo
+                        address={github}
+                        site='github'
+                        />
+                    </div>
+                }
+
+                {hoverText &&
+                    <span
+                    className='img-span'>
+                        Visit site
+                        <Logo
+                        color='29,53,87'
+                        />
+                    </span>
+                }
+            </div>
+            
+            {innerWidth <= 800 &&
                 <div className='img-links'>
                     <a
                     href={address}
@@ -61,15 +90,7 @@ export default ({github, name, address, img, gif, description, showProject}) => 
                     site='github'
                     />
                 </div>
-
-                {hoverText &&
-                    <span
-                    className='img-span'>
-                        Visit site
-                        <img src={require('../../assets/newtab.png')} alt='Open site in new tab'/>
-                    </span>
-                }
-            </div>
+            }
         </div>
     )
 }
