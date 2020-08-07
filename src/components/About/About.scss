@@ -25,15 +25,6 @@
     p {
         margin-bottom: 2rem;
         padding: 1rem 0;
-
-        &:hover {
-            background-color: #aaaaaa;
-            color: $dullBlue;
-        }
-
-        &:last-of-type {
-            position: relative;
-        }
     }
     
 }
