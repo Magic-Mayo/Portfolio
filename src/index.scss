@@ -10,13 +10,12 @@
 
 body {
     margin: 0;
-    background-color: #f1faee;
+    background-color: $cream;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     color: $darkBlue;
     height: 100vh;
     font-family: 'Quicksand', sans-serif;
-    overflow-x: hidden;
 }
 
 html {
@@ -35,10 +34,15 @@ html {
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
 
 li {
     list-style: none;
+}
+
+#root {
+    height: 100vh;
+    overflow-x: hidden;
 }
