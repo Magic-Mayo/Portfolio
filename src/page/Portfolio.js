@@ -59,6 +59,7 @@ export default function Portfolio(){
                         return <Projects
                         key={ind}
                         showProject={showProject === ind}
+                        innerWidth={innerWidth}
                         {...project}
                         />
                     })}
