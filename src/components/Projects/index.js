@@ -10,31 +10,33 @@ export default ({github, name, address, img, gif, description, showProject}) => 
     return (
         <div
         className={`project project-${github} ${showProject ? 'current' : ''}`}
-        onMouseEnter={() => setGifSrc(true)}
-        onMouseLeave={() => setGifSrc(false)}
+        onTouchStart={e => console.log(e)}
         >
             
-            <h1 className={`project-title project-title-${name}`}>
+            <a
+            href={address}
+            rel='noopener noreferrer'
+            target='_blank'
+            className={`project-title project-title-${name}`}
+            >
                 {name}
-            </h1>
+            </a>
 
-            <Logo
-            address={github}
-            site='github'
-            />
             
             <p>{description}</p>
 
-            <span
+            <div
             className='img-container'
             onClick={() => window.open(`${address}`, '_blank','')}
             onMouseEnter={() => {
                 setHoverText(true);
                 setOpacity(.3);
+                setGifSrc(true)
             }}
             onMouseLeave={() => {
                 setHoverText(false);
                 setOpacity(1);
+                setGifSrc(false)
             }}
             >
 
@@ -44,13 +46,30 @@ export default ({github, name, address, img, gif, description, showProject}) => 
                 style={{opacity: opacity}}
                 className={`img img-${github}`}
                 />
+                
+                <div className='img-links'>
+                    <a
+                    href={address}
+                    rel='noopener noreferrer'
+                    target='_blank'
+                    >
+                        <Logo />
+                    </a>
 
-                {hoverText && 
+                    <Logo
+                    address={github}
+                    site='github'
+                    />
+                </div>
+
+                {hoverText &&
                     <span
-                    className='img-span'>Visit site
+                    className='img-span'>
+                        Visit site
                         <img src={require('../../assets/newtab.png')} alt='Open site in new tab'/>
-                    </span>}
-            </span>
+                    </span>
+                }
+            </div>
         </div>
     )
 }
