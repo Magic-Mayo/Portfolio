@@ -9,16 +9,14 @@
 @import './components/Nav/Nav.scss';
 
 body {
-  margin: 0;
-  background-image: url('./assets/port.webp');
-  background-size: contain;
-  background-attachment: fixed;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  color: $teal;
-  height: 100vh;
-  font-family: 'Quicksand', sans-serif;
-  overflow-x: hidden;
+    margin: 0;
+    background-color: #f1faee;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    color: $darkBlue;
+    height: 100vh;
+    font-family: 'Quicksand', sans-serif;
+    overflow-x: hidden;
 }
 
 html {
