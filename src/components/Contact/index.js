@@ -1,25 +1,25 @@
 import React, { useState } from 'react';
 import Logo from '../Logos';
-import Envelope from '../Logos/Envelope';
 
+const wasMessageSent = () => {
+    const messageSentOn = parseInt(localStorage.getItem('dateMessage'));
+    if((isNaN(messageSentOn) === false && Date.now() - messageSentOn > 8640000000) || isNaN(messageSentOn)){
+        return false;
+    }
+    
+    return true;
+}
 
-export default function Contact(props){
+export default () => {
     const [contactName, setContactName] = useState('');
     const [contactEmail, setContactEmail] = useState('');
     const [contactMessage, setContactMessage] = useState('');
+    const [messageSent, setMessageSent] = useState(wasMessageSent);
     
     const encode = (data) => {
         return Object.keys(data)
             .map(key => encodeURIComponent(key) + "=" + encodeURIComponent(data[key]))
             .join("&");
-    }
-
-    const sendMessage = () => {
-
-    }
-
-    const handleEnvelopeClick = () => {
-        
     }
 
     const handleSubmit = e => {
@@ -31,8 +31,15 @@ export default function Contact(props){
             headers: { "Content-Type": "application/x-www-form-urlencoded" },
             body: encode({ "form-name": "messages", "name": [contactName], "email": [contactEmail], "message": [contactMessage]})
             })
-            .then(() => alert("Your message is on the way!"))
-            .catch(error => alert(error));
+            .then(() => {
+                setMessageSent(true);
+                localStorage.setItem('sentMessage', contactMessage);
+                localStorage.setItem('dateMessage', Date.now());
+            })
+            .catch(error => {
+                setMessageSent('There was an error sending your message!  Please try again!');
+                setTimeout(() => setMessageSent(), 5000)
+            });
 
             setContactMessage('');
             setContactName('');
@@ -44,6 +51,17 @@ export default function Contact(props){
 
     return(
         <section className='contact-form-wrapper'>
+            {messageSent ?
+                <p className='contact-message-sent'>
+                    {messageSent === true ?
+                        "You've already sent a message to Mike in the last 24 hours!  He's using a service that only allows a finite number of messages each month!  Please help him out by waiting patiently for a response to your previous message!  I know he will really appreciate it!"
+                    :
+                        messageSent
+                    }
+                </p>
+            
+            :
+
             <form
             className='contact-form'
             netlify='true'
@@ -72,8 +90,9 @@ export default function Contact(props){
                     value={contactMessage}>
                     </textarea>
                 </div>
-                <button className='contact-form-submit'>Send!</button>
+                    <button className='contact-form-submit'>Send!</button>
             </form>
+            }
 
             <p className='contact-other'>...or reach me here</p>
             
