@@ -5,7 +5,7 @@ import About from '../components/About';
 import Projects from '../components/Projects';
 import Contact from '../components/Contact';
 import projectData from '../data/projects.json'
-import { Route, Link } from 'react-router-dom';
+import { Route, Link, useLocation } from 'react-router-dom';
 import Arrow from '../components/Logos/arrow';
 import DownArrow from '../components/Logos/downArrow';
 import useWindowDimensions from '../hooks/useWindowDimensions';
@@ -13,16 +13,22 @@ import useWindowDimensions from '../hooks/useWindowDimensions';
 export default function Portfolio(){
     const [showProject, setShowProject] = useState(0);
     const {innerWidth, innerHeight} = useWindowDimensions();
+    const location = useLocation();
+
+    useEffect(() => {
+        window.scrollTo({top: 0})
+    }, [location.pathname]);
 
     return (
         <>
             <Nav
-            mobile={innerWidth < 675 || innerHeight < 700}
+            innerWidth={innerWidth}
+            innerHeight={innerHeight}
             />
 
             <Route exact path='/'>
                 <Header />
-                {innerWidth > 675 &&
+                {innerWidth > 768 &&
                     <Link to='/projects' className='link-arrow'>
                         <DownArrow>
                             <span>Projects</span>
@@ -35,12 +41,19 @@ export default function Portfolio(){
                 <section
                 className='project-wrapper'
                 >
-                    <span
-                    onClick={() => setShowProject(prevProj => prevProj > 0 ? prevProj - 1 : projectData.length - 1)}
-                    className='arrow prev-arrow'
-                    >
-                        <Arrow />
-                    </span>
+                    {innerWidth > 1024 ? 
+                        <Arrow
+                        onClick={() => setShowProject(prevProj => prevProj > 0 ? prevProj - 1 : projectData.length - 1)}
+                        className='arrow prev-arrow'
+                        />
+
+                    :
+
+                        <DownArrow
+                        onClick={() => setShowProject(prevProj => prevProj > 0 ? prevProj - 1 : projectData.length - 1)}
+                        className='arrow prev-arrow'
+                        />
+                    }
 
                     {projectData.map((project, ind) => {
                         return <Projects
@@ -50,53 +63,52 @@ export default function Portfolio(){
                         />
                     })}
 
-                    <span
-                    onClick={() => setShowProject(prevProj => prevProj === projectData.length - 1 ? 0 : prevProj + 1)}
-                    className='arrow next-arrow'
-                    >
-                        <Arrow />
-                    </span>
+                    {innerWidth > 1024 ? 
+                        <Arrow
+                        onClick={() => setShowProject(prevProj => prevProj === projectData.length - 1 ? 0 : prevProj + 1)}
+                        className='arrow next-arrow'
+                        />
 
-                    {innerWidth > 675 &&
+                    :
+
+                        <DownArrow
+                        onClick={() => setShowProject(prevProj => prevProj === projectData.length - 1 ? 0 : prevProj + 1)}
+                        className='arrow next-arrow'
+                        />
+                    }
+
+                    {innerWidth > 768 &&
                         <Link to='/about' className='link-arrow'>
-                            <DownArrow>
-                                <span>About</span>
-                            </DownArrow>
+                            <DownArrow />
                         </Link>
                     }
                 </section>
             </Route>
 
             <Route path='/about'>
-                {innerWidth > 675 &&
+                {innerWidth > 768 &&
                     <Link to='/projects' className='up-arrow link-arrow'>
                         <DownArrow
                         top={true}
-                        >
-                            <span>Projects</span>
-                        </DownArrow>
+                        />
                     </Link>
                 }
 
                 <About />
 
-                {innerWidth > 675 &&
+                {innerWidth > 768 &&
                     <Link to='/contact' className='link-arrow'>
-                        <DownArrow>
-                            <span>Contact</span>
-                        </DownArrow>
+                        <DownArrow />
                     </Link>
                 }
             </Route>
 
             <Route path='/contact'>
-                {innerWidth > 675 &&
+                {innerWidth > 768 &&
                     <Link to='/about' className='up-arrow link-arrow'>
                         <DownArrow
                         top={true}
-                        >
-                            <span>About</span>
-                        </DownArrow>
+                        />
                     </Link>
                 }
                 
