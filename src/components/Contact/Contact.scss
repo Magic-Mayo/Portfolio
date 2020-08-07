@@ -3,6 +3,28 @@
         font-size: 5rem;
     }
 
+    &-message {
+        &-sent {
+            width: 50%;
+            color: $red;
+            margin: 0 auto 7.5rem;
+
+            @media screen and (max-width: 1024px) {
+                width: 65%;
+                margin: 0 auto 5rem;
+            }
+
+            @media screen and (max-width: 800px) {
+                width: 70%;
+            }
+
+            @media screen and (max-width: 600px) {
+                width: 80%;
+                margin: 0 auto 2rem;
+            }
+        }
+    }
+
     &-form {
         margin-top: 5rem;
         display: flex;
