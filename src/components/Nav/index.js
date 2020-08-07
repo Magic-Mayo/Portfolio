@@ -7,23 +7,27 @@ const navItems = [
     'Contact'
 ]
 
-export default ({mobile}) => {
+export default () => {
     const location = useLocation();
 
     return (
-        <nav className='nav'>
-            <span>Mike Mayo</span>
-            <ul>
-                {navItems.map((item, ind) => (
-                    <Link
-                    to={`/${item.toLowerCase()}`}
-                    className={`${location.pathname === `/${item.toLowerCase()}` ? 'active' : ''}`}
-                    key={ind}
-                    >
-                        {item}
-                    </Link>
-                ))}
-            </ul>
-        </nav>
+        <>
+            <span className='site-title'>
+                <span>Mike</span><span>Mayo</span>
+            </span>
+            <nav className='nav'>
+                <ul>
+                    {navItems.map((item, ind) => (
+                        <Link
+                        to={`/${item.toLowerCase()}`}
+                        className={`${location.pathname === `/${item.toLowerCase()}` ? 'active' : ''}`}
+                        key={ind}
+                        >
+                            {item}
+                        </Link>
+                    ))}
+                </ul>
+            </nav>
+        </>
     )
 }
