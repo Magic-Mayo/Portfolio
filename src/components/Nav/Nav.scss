@@ -1,16 +1,10 @@
 .nav {
-    width: 100%;
+    width: fit-content;
     height: 6.5rem;
     font-size: 2rem;
     position: fixed;
     top: 0;
     z-index: 1;
-
-    span {
-        position: relative;
-        top: 50%;
-        transform: translateY(-50%);
-    }
 
     ul {
         display: inline-flex;
@@ -18,19 +12,96 @@
         right: 2vw;
         top: 0;
         height: 6.5rem;
-
+        
+        @media screen and (max-width: 768px) {
+            top: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end;
+        }
+        
+        @media screen and (max-height: 675px) and (min-width: 700px) {
+            display: flex;
+            flex-direction: column;
+            top: 40%;
+            transform: translateY(-50%);
+            align-items: flex-end;
+        }
+        
         a {
             display: flex;
             align-items: center;
             margin: 0 10px;
-            opacity: .5;
-                
+            transition: all .4s;
+            
+            @media screen and (max-width: 768px) {
+                margin: .5rem;
+            }
+            
             &.active {
                 text-decoration: underline;
-                font-size: 2.5rem;
-                opacity: 1;
-                color: $lightOrange;
+                font-size: 3.3rem;
+                color: $red;
+                transition: all .4s;
             }
+        }
+    }
+}
+
+.site-title {
+    position: fixed;
+    margin: 2rem;
+    top: 0;
+    font-size: 3.6rem;
+    
+    span:first-of-type {
+        background-color: $red;
+        padding: .5rem;
+        border-top-left-radius: 15px;
+        border-bottom-left-radius: 15px;
+        border-top-right-radius: 15px;
+        transition: all .6s;
+
+        @media screen and (max-width: 800px){
+            transition: all .6s;
+            border-top-left-radius: 15px;
+            border-top-right-radius: 0;
+            border-bottom-left-radius: 15px;
+        }
+
+        @media screen and (max-width: 560px){
+            transition: all .6s;
+            border-bottom-left-radius: 0;
+            border-top-left-radius: 0;
+        }
+    }
+    
+    span:nth-of-type(2) {
+        position: fixed;
+        border-bottom-left-radius: 15px;
+        border-top-right-radius: 15px;
+        border-bottom-right-radius: 15px;
+        padding: .5rem;
+        background-color: $darkBlue;
+        color: $red;
+        top: 6.92rem;
+        transition: all .6s;
+
+        @media screen and (max-width: 800px){
+            transition: transform .5s;
+            transform: rotateZ(180deg) translateY(54px);
+            border-bottom-left-radius: 15px;
+            border-top-left-radius: 15px;
+            border-top-right-radius: 0;
+            border-bottom-right-radius: 0;
+        }
+
+        @media screen and (max-width: 560px) {
+            transition: all .5s;
+            transform: translateX(-86px);
+            border-top-right-radius: 24px;
+            border-top-left-radius: 0;
+            border-bottom-right-radius: 0;
         }
     }
 }
