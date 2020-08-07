@@ -1,6 +1,8 @@
-$teal: #20E9FF;
-$darkOrange: #c45a14;
-$lightOrange: #ff7e28;
+$darkBlue: #1d3557;
+$dullBlue: #457b9d;
+$red: #e63946;
+$lightBlue: #a8dadc;
+$cream: #f1faee;
 
 .hidden {
     visibility: hidden;
@@ -30,7 +32,7 @@ $lightOrange: #ff7e28;
 
 a {
     text-decoration: none;
-    color: $teal;
+    color: $darkBlue;
 }
 
 .link-arrow {
@@ -39,8 +41,8 @@ a {
     left: 50%;
     transform: translateX(-50%);
     z-index: 5;
-    fill: $lightOrange;
-    color: $lightOrange;
+    fill: $red;
+    color: $red;
     font-size: 20px;
     height: fit-content;
     opacity: .7;
@@ -61,10 +63,10 @@ a {
 
     &.up-arrow {
         top: 25px;
-        color: $teal;
+        color: $darkBlue;
 
         svg {
-            fill: $teal;
+            fill: $darkBlue;
             transform: rotateX(180deg);
         }
     }
