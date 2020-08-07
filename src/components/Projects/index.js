@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useState, useEffect} from 'react';
 import Logo from '../Logos';
 
 export default ({github, name, address, img, gif, description, showProject, innerWidth}) => {
@@ -6,6 +6,10 @@ export default ({github, name, address, img, gif, description, showProject, inne
     const [hoverText, setHoverText] = useState(false);
     const [opacity, setOpacity] = useState(1);
     const [gifSrc, setGifSrc] = useState(false);
+
+    useEffect(() => {
+
+    })
 
     return (
         <div
@@ -54,22 +58,37 @@ export default ({github, name, address, img, gif, description, showProject, inne
                         rel='noopener noreferrer'
                         target='_blank'
                         >
-                            <Logo />
+                            <Logo
+                            color='230,57,70'
+                            />
                         </a>
 
                         <Logo
                         address={github}
                         site='github'
+                        color='29,53,87'
                         />
                     </div>
                 }
 
                 {hoverText &&
                     <span
-                    className='img-span'>
-                        Visit site
+                    className='img-span'
+                    onMouseEnter={() => {
+                        setHoverText(true);
+                        setOpacity(.3);
+                        setGifSrc(true)
+                    }}
+                    onMouseLeave={() => {
+                        setHoverText(false);
+                        setOpacity(1);
+                        setGifSrc(false)
+                    }}
+                    >
+                        {/* Visit site */}
                         <Logo
                         color='29,53,87'
+                        width='10rem'
                         />
                     </span>
                 }
