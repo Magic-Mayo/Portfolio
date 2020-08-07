@@ -44,7 +44,6 @@ export default function Contact(props){
 
     return(
         <section className='contact-form-wrapper'>
-            <p className='contact-header'>Contact</p>
             <form
             className='contact-form'
             netlify='true'
@@ -77,6 +76,7 @@ export default function Contact(props){
             </form>
 
             <p className='contact-other'>...or reach me here</p>
+            
             <div>
                 <Logo site='linkedin' />
                 <Logo site='github' styles={{margin: '0 2rem'}}/>
