@@ -62,7 +62,7 @@
     margin: 2rem;
     top: 0;
     font-size: 3.6rem;
-    z-index: 2;
+    z-index: 6;
     
     a:first-of-type > span {
         background-color: $red;
@@ -71,13 +71,14 @@
         border-bottom-left-radius: 15px;
         border-top-right-radius: 15px;
         transition: all .6s;
-
+        box-shadow: $darkBlue -2px 5px 10px 5px;
+        
         @media screen and (max-width: 800px){
             transition: all .6s;
             border-bottom-left-radius: 0;
             border-top-left-radius: 0;
         }
-
+        
         @media screen and (max-width: 560px){
             transition: all .6s;
             border-top-left-radius: 15px;
@@ -96,15 +97,17 @@
         color: $red;
         top: 6.92rem;
         transition: all .6s;
-
+        box-shadow: $red 2px 5px 10px;
+        
         @media screen and (max-width: 800px) {
             transition: all .5s;
             transform: translateX(-86px);
             border-top-right-radius: 24px;
             border-top-left-radius: 0;
             border-bottom-right-radius: 0;
+            box-shadow: $red -3px 5px 10px;
         }
-
+        
         @media screen and (max-width: 560px){
             transition: all .5s;
             transform: rotateZ(180deg) translateY(54px);
@@ -112,6 +115,7 @@
             border-top-left-radius: 15px;
             border-top-right-radius: 0;
             border-bottom-right-radius: 0;
+            box-shadow: $red -3px -7px 10px 3px;
         }
     }
 }
