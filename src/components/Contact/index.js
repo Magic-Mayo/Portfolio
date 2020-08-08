@@ -10,7 +10,7 @@ const wasMessageSent = () => {
     return true;
 }
 
-export default () => {
+export default ({innerWidth}) => {
     const [contactName, setContactName] = useState('');
     const [contactEmail, setContactEmail] = useState('');
     const [contactMessage, setContactMessage] = useState('');
@@ -60,47 +60,83 @@ export default () => {
                     }
                 </p>
             
-            :
+            : innerWidth > 675 ?
 
-            <form
-            className='contact-form'
-            netlify='true'
-            name='messages'
-            onSubmit={handleSubmit}
-            >
-                <div className='contact-form-input'>
-                    <input
-                    className='contact-form-name'
-                    placeholder='Your name'
-                    onChange={(e) => setContactName(e.target.value)}
-                    value={contactName}
-                    type='text'/>
-                    <input
-                    className='contact-form-email'
-                    placeholder='Email address'
-                    onChange={(e) => setContactEmail(e.target.value)}
-                    value={contactEmail}
-                    type='email'/>
-                </div>
-                <div className='contact-form-input'>
-                    <textarea
-                    className='contact-form-message'
-                    placeholder='Enter message to send to Mike Mayo here!'
-                    onChange={(e) => setContactMessage(e.target.value)}
-                    value={contactMessage}>
-                    </textarea>
-                </div>
-                    <button className='contact-form-submit'>Send!</button>
-            </form>
+                <form
+                className='contact-form'
+                netlify='true'
+                name='messages'
+                onSubmit={handleSubmit}
+                >
+                    <div className='contact-form-input'>
+                        <input
+                        className='contact-form-name'
+                        placeholder='Your name'
+                        onChange={(e) => setContactName(e.target.value)}
+                        value={contactName}
+                        type='text'/>
+                        <input
+                        className='contact-form-email'
+                        placeholder='Email address'
+                        onChange={(e) => setContactEmail(e.target.value)}
+                        value={contactEmail}
+                        type='email'/>
+                    </div>
+                    <div className='contact-form-input'>
+                        <textarea
+                        className='contact-form-message'
+                        placeholder='Enter message to send to Mike Mayo here!'
+                        onChange={(e) => setContactMessage(e.target.value)}
+                        value={contactMessage}>
+                        </textarea>
+                    </div>
+                        <button className='contact-form-submit'>Send!</button>
+                </form>
+            :
+                <>
+                    <p className='contact-other'>Contact Mike!</p>
+                    
+                    <div>
+                        <Logo site='linkedin' />
+                        <Logo site='github' styles={{margin: '0 2rem'}}/>
+                        <Logo site='mail' />
+                    </div>
+                </>
             }
 
-            <p className='contact-other'>...or reach me here</p>
-            
-            <div>
-                <Logo site='linkedin' />
-                <Logo site='github' styles={{margin: '0 2rem'}}/>
-                <Logo site='mail' />
-            </div>
+            {innerWidth < 675 &&
+                <form
+                className='contact-form'
+                netlify='true'
+                name='messages'
+                onSubmit={handleSubmit}
+                >
+                    <div className='contact-form-input'>
+                        <input
+                        className='contact-form-name'
+                        placeholder='Your name'
+                        onChange={(e) => setContactName(e.target.value)}
+                        value={contactName}
+                        type='text'/>
+                        <input
+                        className='contact-form-email'
+                        placeholder='Email address'
+                        onChange={(e) => setContactEmail(e.target.value)}
+                        value={contactEmail}
+                        type='email'/>
+                    </div>
+                    <div className='contact-form-input'>
+                        <textarea
+                        className='contact-form-message'
+                        placeholder='Enter message to send to Mike Mayo here!'
+                        onChange={(e) => setContactMessage(e.target.value)}
+                        value={contactMessage}>
+                        </textarea>
+                    </div>
+                        <button className='contact-form-submit'>Send!</button>
+                </form>
+            }
+
         </section>
     )
 }
