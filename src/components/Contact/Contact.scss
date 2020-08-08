@@ -33,6 +33,10 @@
         align-items: center;
         position: relative;
         
+        @media screen and (max-width: 675px) {
+            margin-top: 1rem;
+        }
+
         &-input {
             width: 50%;
             min-width: 250px;
@@ -49,7 +53,7 @@
             height: calc(100vh - 10rem);
 
             @media screen and (max-width: 675px) {
-                padding-top: 5rem;
+                margin-top: 5rem;
             }
 
             input, textarea {
