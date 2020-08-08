@@ -113,7 +113,9 @@ export default function Portfolio(){
                     </Link>
                 }
                 
-                <Contact />
+                <Contact
+                innerWidth={innerWidth}
+                />
             </Route>
             <div style={{display: 'none'}}>
                 Icons made by
