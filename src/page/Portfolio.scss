@@ -49,7 +49,7 @@
             margin: 0 1.5rem;
             
             &.outview {
-                animation: creator 2.5s;
+                animation: opacityShift 2.5s;
                 opacity: 0;
             }
         }
