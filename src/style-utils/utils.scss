@@ -47,6 +47,12 @@ a {
     height: fit-content;
     opacity: .7;
     z-index: 10;
+    height: 65px;
+
+    &.opacity-shift {
+        opacity: .1;
+        animation: opacityShift 1s alternate-reverse infinite;
+    }
 
     &:hover {
         opacity: 1;
