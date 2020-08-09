@@ -38,42 +38,55 @@
         }
 
         .arrow {
-            position: fixed;
-            top: 50%;
-            transform: translateY(-50%);
-            opacity: .7;
+        position: fixed;
+        top: 50%;
+        transform: translateY(-50%);
+        opacity: .7;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
 
+        &> span {
+            font-size: 32px;
+            width: 150px;
+        }
+        
+        &:hover {
+            opacity: 1;
+        }
+        
+        svg {
+            width: 100px;
+            fill: $red;
+            
             &:hover {
-                opacity: 1;
+                cursor: pointer;
             }
-            
+        }
+        
+                
+        &.prev-arrow {
+            left: 2vw;
+            align-items: flex-start;
+                        
             svg {
-                width: 100px;
-                fill: $red;
+                transform: rotateY(180deg);
+                fill: $darkBlue;
                 
-                &:hover {
-                    cursor: pointer;
+                @media screen and (max-width: 1024px) {
+                    width: 50px;
+                    transform: rotate(90deg);
                 }
             }
             
-            &.prev-arrow {
-                left: 2vw;
-                
-                svg {
-                    transform: rotateY(180deg);
-                    fill: $darkBlue;
-                    
-                    @media screen and (max-width: 1024px) {
-                        width: 50px;
-                        transform: rotate(90deg);
-                    }
-                }
-                
-            }
+        }
+        
+        &.next-arrow {
+            right: 2vw;
             
-            &.next-arrow {
-                right: 2vw;
-                
+            &> span {
+                text-align: right;
+            }
                 svg {
                     @media screen and (max-width: 1024px) {
                         width: 50px;
