@@ -29,7 +29,7 @@ export default function Portfolio(){
             <Route exact path='/'>
                 <Header />
                 {innerWidth > 768 &&
-                    <Link to='/projects' className='link-arrow'>
+                    <Link to='/projects' className='link-arrow opacity-shift'>
                         <DownArrow>
                             <span>Projects</span>
                         </DownArrow>
@@ -41,11 +41,13 @@ export default function Portfolio(){
                 <section
                 className='project-wrapper'
                 >
-                    {innerWidth > 1024 ? 
-                        <Arrow
+                    {innerWidth > 1024 ?
+                        <div className='arrow prev-arrow'
                         onClick={() => setShowProject(prevProj => prevProj > 0 ? prevProj - 1 : projectData.length - 1)}
-                        className='arrow prev-arrow'
-                        />
+                        >
+                            <Arrow />
+                            <span>{projectData[showProject === 0 ? projectData.length - 1 : showProject - 1].name}</span>
+                        </div>
 
                     :
 
@@ -64,11 +66,13 @@ export default function Portfolio(){
                         />
                     })}
 
-                    {innerWidth > 1024 ? 
-                        <Arrow
+                    {innerWidth > 1024 ?
+                        <div className='arrow next-arrow'
                         onClick={() => setShowProject(prevProj => prevProj === projectData.length - 1 ? 0 : prevProj + 1)}
-                        className='arrow next-arrow'
-                        />
+                        >
+                            <Arrow />
+                            <span>{projectData[showProject === projectData.length - 1 ? 0 : showProject + 1].name}</span>
+                        </div>
 
                     :
 
