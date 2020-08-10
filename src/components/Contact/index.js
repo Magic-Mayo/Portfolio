@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import Logo from '../Logos';
+import Form from '../Form';
 
 const wasMessageSent = () => {
     const messageSentOn = parseInt(localStorage.getItem('dateMessage'));
@@ -11,43 +11,7 @@ const wasMessageSent = () => {
 }
 
 export default ({innerWidth}) => {
-    const [contactName, setContactName] = useState('');
-    const [contactEmail, setContactEmail] = useState('');
-    const [contactMessage, setContactMessage] = useState('');
     const [messageSent, setMessageSent] = useState(wasMessageSent);
-    
-    const encode = (data) => {
-        return Object.keys(data)
-            .map(key => encodeURIComponent(key) + "=" + encodeURIComponent(data[key]))
-            .join("&");
-    }
-
-    const handleSubmit = e => {
-        e.preventDefault();
-
-        if(contactName !== '' && contactEmail !== '' && contactMessage !== ''){
-            fetch("/", {
-            method: "POST",
-            headers: { "Content-Type": "application/x-www-form-urlencoded" },
-            body: encode({ "form-name": "messages", "name": [contactName], "email": [contactEmail], "message": [contactMessage]})
-            })
-            .then(() => {
-                setMessageSent(true);
-                localStorage.setItem('sentMessage', contactMessage);
-                localStorage.setItem('dateMessage', Date.now());
-            })
-            .catch(error => {
-                setMessageSent('There was an error sending your message!  Please try again!');
-                setTimeout(() => setMessageSent(), 5000)
-            });
-
-            setContactMessage('');
-            setContactName('');
-            setContactEmail('');
-        } else {
-            alert('Please fill out all fields!')
-        }
-    };
 
     return(
         <section className='contact-form-wrapper'>
@@ -60,81 +24,11 @@ export default ({innerWidth}) => {
                     }
                 </p>
             
-            : innerWidth > 675 ?
-
-                <form
-                className='contact-form'
-                netlify='true'
-                name='messages'
-                onSubmit={handleSubmit}
-                >
-                    <div className='contact-form-input'>
-                        <input
-                        className='contact-form-name'
-                        placeholder='Your name'
-                        onChange={(e) => setContactName(e.target.value)}
-                        value={contactName}
-                        type='text'/>
-                        <input
-                        className='contact-form-email'
-                        placeholder='Email address'
-                        onChange={(e) => setContactEmail(e.target.value)}
-                        value={contactEmail}
-                        type='email'/>
-                    </div>
-                    <div className='contact-form-input'>
-                        <textarea
-                        className='contact-form-message'
-                        placeholder='Enter message to send to Mike Mayo here!'
-                        onChange={(e) => setContactMessage(e.target.value)}
-                        value={contactMessage}>
-                        </textarea>
-                    </div>
-                        <button className='contact-form-submit'>Send!</button>
-                </form>
-            :
-                <>
-                    <p className='contact-other'>Contact Mike!</p>
-                    
-                    <div>
-                        <Logo site='linkedin' />
-                        <Logo site='github' styles={{margin: '0 2rem'}}/>
-                        <Logo site='mail' />
-                    </div>
-                </>
-            }
-
-            {innerWidth < 675 &&
-                <form
-                className='contact-form'
-                netlify='true'
-                name='messages'
-                onSubmit={handleSubmit}
-                >
-                    <div className='contact-form-input'>
-                        <input
-                        className='contact-form-name'
-                        placeholder='Your name'
-                        onChange={(e) => setContactName(e.target.value)}
-                        value={contactName}
-                        type='text'/>
-                        <input
-                        className='contact-form-email'
-                        placeholder='Email address'
-                        onChange={(e) => setContactEmail(e.target.value)}
-                        value={contactEmail}
-                        type='email'/>
-                    </div>
-                    <div className='contact-form-input'>
-                        <textarea
-                        className='contact-form-message'
-                        placeholder='Enter message to send to Mike Mayo here!'
-                        onChange={(e) => setContactMessage(e.target.value)}
-                        value={contactMessage}>
-                        </textarea>
-                    </div>
-                        <button className='contact-form-submit'>Send!</button>
-                </form>
+            : 
+                <Form
+                setMessageSent={setMessageSent}
+                innerWidth={innerWidth}
+                />
             }
 
         </section>
