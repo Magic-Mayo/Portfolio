@@ -11,10 +11,10 @@
     {
         "name": "Virtual Office Hours",
         "github": "scheduler",
-        "address": "https://virtualofficehours.herokuapp.com",
+        "address": "https://virtualofficehours.herokuapp.com/student",
         "img": "scheduler.webp",
         "gif": "scheduler.gif.webp",
-        "description": "While working as a teaching assistant the students wanted to be able to schedule time with me outside of class.  I created this site so students could do just that.  Site was made using React, Node.js, Styled Components, React Router, Express, and nodemailer.",
+        "description": "While working as a teaching assistant the students wanted to be able to schedule time with me outside of class.  I created this site so students could do just that.  Site was made using React, Node.js, Styled Components, React Router, Express, and nodemailer.  Use email guest@guest.user if you'd like to take a look.",
         "technology": "React, Node.js, React Router, Styled Components, Express, nodemailer"
     },
     {
