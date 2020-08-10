@@ -66,10 +66,11 @@
             display: flex;
             flex-direction: column;
             justify-content: center;
-            margin-top: 10rem;
+            height: 100vh;
 
             @media screen and (max-width: 675px), (max-height: 700px) {
                 margin: 7.5rem 0 15rem;
+                height: unset;
             }
 
             input, textarea {
@@ -82,7 +83,6 @@
                 height: 3.5rem;
                 margin: .5rem;
                 padding: .2rem .5rem;
-                
             }
             
             textarea {
