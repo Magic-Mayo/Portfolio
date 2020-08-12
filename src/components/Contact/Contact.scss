@@ -40,23 +40,49 @@
         &-input {
             width: 50%;
             min-width: 250px;
-            
-            // &-name {
-            //     transition: all .2s;
-            //     transform: translateX(0);
+            // position: relative;
+
+            div {
+                position: relative;
+                width: 100%;
+
+                textarea {
+                    min-width: 98%;
+                    height: 25rem;
+
+                }
                 
-            //     &.content {
-            //         position: relative;
-            //         ::after {
-            //             content: '...is your name';
-            //             position: absolute;
-            //             width: 50px;
-            //             transform: translateX(100%);
-            //             transition: all .2s;
-            
-            //             }
-            //         }
-            // }
+                &.contact-form-textarea {
+                    label {
+                        transition: all .2s;
+                        transform: translate(5%, -500%);
+
+                        @media screen and (max-width: 849px) {
+                            transform: translate(10%, -500%);
+                        }
+
+                        &.content {
+                            transform: translate(7%, -670%);
+                            font-size: 1.5rem;
+                        }
+                    }
+                }
+
+                label {
+                    position: absolute;
+                    transition: all .2s;
+                    top: 50%;
+                    transform: translate(15%, -50%);
+                    opacity: .75;
+                    font-size: 2rem;
+                    
+                    &.content {
+                        transition: all .2s;
+                        transform: translate(15%, -100%);
+                        font-size: 1.4rem;
+                    }
+                }
+            }
         }
 
         &-wrapper {
@@ -80,14 +106,13 @@
                 resize: none;
                 border-radius: .5rem;
                 min-width: 48%;
-                height: 3.5rem;
+                height: 4rem;
                 margin: .5rem;
-                padding: .2rem .5rem;
-            }
-            
-            textarea {
-                min-width: 98%;
-                height: 25rem;
+                padding: 1.7rem .5rem .3rem;
+
+                &:focus {
+                    outline: none;
+                }
             }
 
             div > div {
