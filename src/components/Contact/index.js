@@ -1,4 +1,5 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
+import Logo from '../Logos';
 import Form from '../Form';
 
 const wasMessageSent = () => {
@@ -10,11 +11,35 @@ const wasMessageSent = () => {
     return true;
 }
 
+
 export default ({innerWidth}) => {
     const [messageSent, setMessageSent] = useState(wasMessageSent);
+    
+    useEffect(() => {
+        let messageTimer;
+
+        if(messageSent === 'Please fill out all fields!' || messageSent === 'There was an error sending your message!  Please try again!'){
+            messageTimer = setTimeout(() => setMessageSent(false), 3000);
+        }
+    
+        return () => messageTimer ? clearTimeout(messageTimer) : null;
+    }, [messageSent]);
 
     return(
         <section className='contact-form-wrapper'>
+            {innerWidth < 675 &&
+                <>
+                    <p className='contact-other'>Contact Mike!</p>
+                    
+                    <div>
+                        <Logo site='linkedin' />
+                        <Logo site='github' />
+                        <Logo site='mail' />
+                    </div>
+                </>
+        
+            }
+
             {messageSent ?
                 <p className='contact-message-sent'>
                     {messageSent === true ?
@@ -26,11 +51,23 @@ export default ({innerWidth}) => {
             
             : 
                 <Form
+                messageSent={messageSent}
                 setMessageSent={setMessageSent}
                 innerWidth={innerWidth}
                 />
             }
 
+            {innerWidth > 675 &&
+                <>
+                    <p className='contact-other'>....or reach Mike here!</p>
+                    
+                    <div>
+                        <Logo site='linkedin' />
+                        <Logo site='github' />
+                        <Logo site='mail' />
+                    </div>
+                </>
+            }
         </section>
     )
 }
