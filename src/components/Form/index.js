@@ -46,7 +46,7 @@ export default ({setMessageSent, innerWidth}) => {
             onSubmit={handleSubmit}
             >
                 <div className='contact-form-input'>
-                    <div>
+                    <div className='wrapper'>
                         <label
                         htmlFor='name'
                         className={contactName ? 'content' : ''}
@@ -59,24 +59,25 @@ export default ({setMessageSent, innerWidth}) => {
                         type='text'
                         name='name'
                         />
-                        </div>
-                        <div>
-                    <label
-                    htmlFor='email'
-                    className={contactEmail ? 'content' : ''}
-                    >
-                        {contactEmail ? 'My email is...' : 'Email address'}
-                    </label>
-                    <input
-                    onChange={e => setContactEmail(e.target.value)}
-                    value={contactEmail}
-                    type='email'
-                    name='email'
-                    />
                     </div>
-            </div>
-            <div className='contact-form-input'>
-                <div className='contact-form-textarea'>
+
+                    <div className='wrapper'>
+                        <label
+                        htmlFor='email'
+                        className={contactEmail ? 'content' : ''}
+                        >
+                            {contactEmail ? 'My email is...' : 'Email address'}
+                        </label>
+                        <input
+                        onChange={e => setContactEmail(e.target.value)}
+                        value={contactEmail}
+                        type='email'
+                        name='email'
+                        />
+                    </div>
+                </div>
+
+                <div className='contact-form-input contact-form-textarea'>
                     <label
                     htmlFor='message'
                     className={contactMessage ? 'content' : ''}
@@ -89,7 +90,7 @@ export default ({setMessageSent, innerWidth}) => {
                     value={contactMessage}
                     />
                 </div>
-            </div>
+                
                 <button className='contact-form-submit'>Send!</button>
             </form>
         </>
