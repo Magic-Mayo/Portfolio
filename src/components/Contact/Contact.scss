@@ -40,47 +40,46 @@
         &-input {
             width: 50%;
             min-width: 250px;
-            // position: relative;
-
-            div {
+            
+            &.contact-form-textarea {
                 position: relative;
-                width: 100%;
-
+                
                 textarea {
                     min-width: 98%;
                     height: 25rem;
-
                 }
                 
-                &.contact-form-textarea {
-                    label {
-                        transition: all .2s;
-                        transform: translate(5%, -500%);
-
-                        @media screen and (max-width: 849px) {
-                            transform: translate(10%, -500%);
-                        }
-
-                        &.content {
-                            transform: translate(7%, -670%);
-                            font-size: 1.5rem;
-                        }
-                    }
-                }
-
                 label {
-                    position: absolute;
                     transition: all .2s;
-                    top: 50%;
-                    transform: translate(15%, -50%);
-                    opacity: .75;
-                    font-size: 2rem;
+                    transform: translate(5%, -500%);
+                    
+                    @media screen and (max-width: 849px) {
+                        transform: translate(10%, -500%);
+                    }
                     
                     &.content {
-                        transition: all .2s;
-                        transform: translate(15%, -100%);
-                        font-size: 1.4rem;
+                        transform: translate(7%, -670%);
+                        font-size: 1.5rem;
                     }
+                }
+            }
+            
+            .wrapper {
+                position: relative;
+            }
+
+            label {
+                position: absolute;
+                transition: all .2s;
+                top: 50%;
+                transform: translate(15%, -50%);
+                opacity: .75;
+                font-size: 2rem;
+                
+                &.content {
+                    transition: all .2s;
+                    transform: translate(15%, -100%);
+                    font-size: 1.4rem;
                 }
             }
         }
