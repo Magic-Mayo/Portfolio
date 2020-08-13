@@ -59,14 +59,14 @@
                 
                 label {
                     transition: all .2s;
-                    transform: translate(5%, -500%);
+                    transform: translate(5%, -490%);
                     
                     @media screen and (max-width: 849px) {
-                        transform: translate(10%, -500%);
+                        transform: translate(10%, -490%);
                     }
                     
                     &.content {
-                        transform: translate(7%, -670%);
+                        transform: translate(7%, -650%);
                         font-size: 1.5rem;
                     }
                 }
