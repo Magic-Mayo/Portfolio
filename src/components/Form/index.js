@@ -82,7 +82,7 @@ export default ({setMessageSent, innerWidth}) => {
                     htmlFor='message'
                     className={contactMessage ? 'content' : ''}
                     >
-                        {contactMessage ? 'Your message to Mike...' : innerWidth < 850 ? 'Enter a message!' : 'Enter message to send to Mike Mayo here!'}
+                        {contactMessage ? 'My message to Mike...' : innerWidth < 850 ? 'Enter a message!' : 'Enter message to send to Mike Mayo here!'}
                     </label>
                     <textarea
                     name='message'
