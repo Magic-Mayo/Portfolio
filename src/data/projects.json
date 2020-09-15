@@ -42,11 +42,11 @@
         "description": "I made this app to demonstrate a little bit of front-end design and some simple functionality.  Has a theme that you may or may not pick up on."
     },
     {
-        "name": "Phrasing!",
-        "github": "Phrasing-BOOM",
-        "address": "https://Magic-Mayo.github.io/Phrasing-BOOM",
-        "img": "archerpi.webp",
-        "gif": "archer.webp",
-        "description": "This was one of the first apps I made using React.  Demonstrates the single page application and how it can be used to render content very quick.  Simple but a fun concept and small things like this can be used for practice."
+        "name": "Exit Not Found!",
+        "github": "exit-not-found",
+        "address": "https://Magic-Mayo.github.io/exit-not-found",
+        "img": "exitnotfound.webp",
+        "gif": "ExitNotFound.gif",
+        "description": "Entry for the js13k games for 2020.  Built with just HTML, CSS, and JS.  Main constraints of the games is that it must be under 13kb and no use of outside libraries or any HTTP resources!  Proud of what was able to be accomplished given these constraints!"
     }
 ]
